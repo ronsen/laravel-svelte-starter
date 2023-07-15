@@ -1,11 +1,25 @@
 <script>
-    import { Link } from "@inertiajs/svelte";
+    import { page, Link } from "@inertiajs/svelte";
+    import { router } from '@inertiajs/svelte';
+
+    function logout() {
+        router.post('/logout');
+    }
 </script>
 
 <main class="flex justify-between items-center border-b border-primary pb-2 mb-8">
     <h1 class="font-bold uppercase"><Link href="/">Laravel</Link></h1>
 
-    <Link href="/posts/create"><i class="bi bi-plus-circle"></i></Link>
+    <div class="inline-flex gap-3">
+        {#if $page.props.auth.user}
+            <Link href="/posts/create"><i class="bi bi-plus-circle"></i></Link>
+            <button on:click|preventDefault={logout}><i class="bi bi-box-arrow-right"></i></button>
+        {/if}
+        
+        {#if ! $page.props.auth.user}
+            <Link href="/login"><i class="bi bi-box-arrow-in-right"></i></Link>
+        {/if}
+    </div>
 </main>
 
 <slot />

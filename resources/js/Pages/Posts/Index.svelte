@@ -27,10 +27,13 @@
                 <div class="note-title">
                     <Link href="/posts/{post.id}">{post.title}</Link>
                 </div>
-                <div class="inline-flex gap-3">
-                    <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><i class="bi bi-pencil-square"></i></Link>
-                    <button title="Delete Post" class="text-gray-500" on:click={destroy(post.id)}><i class="bi bi-trash"></i></button>
-                </div>
+
+                {#if $page.props.auth.user}
+                    <div class="inline-flex gap-3">
+                        <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><i class="bi bi-pencil-square"></i></Link>
+                        <button title="Delete Post" class="text-gray-500" on:click={destroy(post.id)}><i class="bi bi-trash"></i></button>
+                    </div>
+                {/if}
             </div>
         {/each}
 
