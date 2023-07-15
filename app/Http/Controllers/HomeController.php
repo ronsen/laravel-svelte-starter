@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
+    const PER_PAGE = 10;
+
     public function index()
     {
-        return Inertia::render('Index', ['user' => 'Ronsen']);
+        $posts = Post::orderBy('id', 'desc')->simplePaginate(self::PER_PAGE);
+       
+        return Inertia::render('Posts/Index', ['posts' => $posts]);
     }
 }
