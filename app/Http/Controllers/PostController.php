@@ -24,7 +24,7 @@ class PostController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect()->route('posts.show', $post);
+        return to_route('posts.show', $post);
     }
 
     public function edit(Post $post): Response
@@ -41,7 +41,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->update();
 
-        return redirect()->route('posts.show', $post);
+        return to_route('posts.show', $post);
     }
 
     public function show(Post $post): Response
@@ -53,6 +53,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('home');
+        return to_route('home');
     }
 }
