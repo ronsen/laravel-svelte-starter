@@ -1,4 +1,6 @@
 <script>
+    import Layout from "./Layout.svelte";
+
     export let user;
 </script>
 
@@ -6,4 +8,6 @@
     <title>Welcome</title>
 </svelte:head>
 
-<h1>Hello, {user}!</h1>
+<Layout>
+    <h1>Hello, {user}!</h1>
+</Layout>
