@@ -3,6 +3,7 @@
     import { router } from '@inertiajs/svelte';
     import Layout from "../Layout.svelte";
     import Alert from "../Components/Alert.svelte";
+    import Pagination from "../Components/Pagination.svelte";
 
     export let posts;
 
@@ -32,5 +33,7 @@
                 </div>
             </div>
         {/each}
+
+        <Pagination data={posts} />
     {/if}
 </Layout>
