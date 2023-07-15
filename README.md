@@ -5,6 +5,7 @@ Starter template using Laravel and Svelte.
 This starter template includes:
 - Laravel 10
 - Svelte
+- Inertia.js
 - Vite
 - Tailwind CSS
 - daisyUI

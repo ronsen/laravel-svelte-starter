@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'content'];
+    protected $appends = ['contentToHtml'];
+
+    public function getContentToHtmlAttribute()
+    {
+        return nl2br($this->content);
+    }
 }
