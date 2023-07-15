@@ -49,7 +49,7 @@ class PostController extends Controller
         return Inertia::render('Posts/Show', ['post' => $post]);
     }
 
-    public function delete(Post $post): RedirectResponse
+    public function destroy(Post $post): RedirectResponse
     {
         $post->delete();
 

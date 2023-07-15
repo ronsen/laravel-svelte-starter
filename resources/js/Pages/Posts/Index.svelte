@@ -1,9 +1,16 @@
 <script>
     import { inertia } from "@inertiajs/svelte";
+    import { router } from '@inertiajs/svelte';
     import Layout from "../Layout.svelte";
     import Alert from "../Components/Alert.svelte";
 
     export let posts;
+
+    function destroy(id) {
+        if (confirm('Delete this post?')) {
+            router.delete('/posts/' + id);
+        }
+    }
 </script>
 
 <svelte:head>
@@ -21,7 +28,7 @@
                 </div>
                 <div class="inline-flex gap-3">
                     <a use:inertia href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><i class="bi bi-pencil-square"></i></a>
-                    <a use:inertia href="/posts/{post.id}/delete" title="Delete Post" class="text-gray-500"><i class="bi bi-trash"></i></a>
+                    <button title="Delete Post" class="text-gray-500" on:click={destroy(post.id)}><i class="bi bi-trash"></i></button>
                 </div>
             </div>
         {/each}
