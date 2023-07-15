@@ -1,7 +1,15 @@
 <script>
+    import { page, useForm } from "@inertiajs/svelte";
     import Layout from "../Layout.svelte";
 
-    export let csrfToken;
+    let form = useForm({
+        title: null,
+        content: null
+    });
+
+    function submit() {
+        $form.post('/posts');
+    }
 </script>
 
 <svelte:head>
@@ -9,14 +17,17 @@
 </svelte:head>
 
 <Layout>
-    <form action="/posts" method="post">
-        <input type="hidden" name="_token" value="{csrfToken}">
+    <form on:submit|preventDefault={submit}>
+        <input type="hidden" name="_token" value="{$page.props.csrfToken}">
         <div class="mb-3">
-            <input type="text" name="title" placeholder="Title" class="input input-bordered w-full" required>
+            <input type="text" bind:value={$form.title} placeholder="Title" class="input input-bordered w-full">
+            {#if $form.errors.title}
+                <div class="text-error text-sm font-bold mt-1">{$form.errors.title}</div>
+            {/if}
         </div>
         <div class="mb-3">
-            <textarea name="content" rows="5" placeholder="Content" class="textarea textarea-bordered w-full"></textarea>
+            <textarea bind:value={$form.content} rows="5" placeholder="Content" class="textarea textarea-bordered w-full" />
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary" disabled={$form.processing}>Save</button>
     </form>
 </Layout>

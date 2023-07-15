@@ -1,5 +1,5 @@
 <script>
-    import { Link } from "@inertiajs/svelte";
+    import { page, Link } from "@inertiajs/svelte";
     import { router } from '@inertiajs/svelte';
     import Layout from "../Layout.svelte";
     import Alert from "../Components/Alert.svelte";
