@@ -9,6 +9,7 @@ This starter template includes:
 - Vite
 - Tailwind CSS
 - daisyUI
+- sqlite
 
 ### Installation
 
@@ -19,6 +20,12 @@ composer install
 npm install
 cp .env.example .env
 php artisan key:generate
+```
+
+Migrate database:
+
+```
+php artisan migrate --seed
 ```
 
 To try this app, run these commands on seperate terminal:
