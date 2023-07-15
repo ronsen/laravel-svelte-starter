@@ -47,12 +47,13 @@
     {/if}
 </Layout>
 
-<dialog bind:this={dialog} class="w-full md:w-2/5 rounded-lg p-6">
-    <form on:submit|preventDefault={submit}>
+<dialog bind:this={dialog} class="modal">
+    <form on:submit|preventDefault={submit} class="modal-box">
         <input type="hidden" bind:this={post}>
-        Delete this post?
+        <h3 class="font-bold text-lg">Confirm</h3>
+        <p class="py-4">Delete this post?</p>
 
-        <div class="flex justify-end gap-3 mt-3">
+        <div class="modal-action">
             <button type="submit" class="btn btn-error btn-sm">Yes</button>
             <button class="btn btn-neutral btn-sm" on:click|preventDefault={() => dialog.close()}>No</button>
         </div>
