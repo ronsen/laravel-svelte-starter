@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-    <title>Laravel</title>
+    <title>{$page.props.appName}</title>
 </svelte:head>
 
 <Layout>

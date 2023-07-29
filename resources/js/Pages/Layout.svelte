@@ -8,7 +8,7 @@
 </script>
 
 <main class="flex justify-between items-center border-b border-primary pb-2 mb-8">
-    <h1 class="font-bold uppercase"><Link href="/">Laravel</Link></h1>
+    <h1 class="font-bold uppercase"><Link href="/">{$page.props.appName}</Link></h1>
 
     <div class="inline-flex gap-3">
         {#if $page.props.auth.user}
