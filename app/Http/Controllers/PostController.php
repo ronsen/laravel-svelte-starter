@@ -38,6 +38,8 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->update();
 
+        session()->flash('message', "<strong>{$post->title}</strong> has been updated.");
+
         return to_route('posts.show', $post);
     }
 
@@ -48,6 +50,8 @@ class PostController extends Controller
 
     public function destroy(Post $post): RedirectResponse
     {
+        session()->flash('message', "<strong>{$post->title}</strong> has been deleted.");
+
         $post->delete();
 
         return to_route('home');

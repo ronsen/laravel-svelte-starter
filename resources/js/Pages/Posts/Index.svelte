@@ -54,8 +54,8 @@
         <p class="py-4">Delete this post?</p>
 
         <div class="modal-action">
-            <button type="submit" class="btn btn-error btn-sm">Yes</button>
             <button class="btn btn-neutral btn-sm" on:click|preventDefault={() => dialog.close()}>No</button>
+            <button type="submit" class="btn btn-error btn-sm">Yes</button>
         </div>
     </form>
 </dialog>

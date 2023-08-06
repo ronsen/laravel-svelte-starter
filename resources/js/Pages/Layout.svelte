@@ -1,6 +1,7 @@
 <script>
     import { page, Link } from "@inertiajs/svelte";
     import { router } from '@inertiajs/svelte';
+    import Alert from "./Components/Alert.svelte";
 
     function logout() {
         router.post('/logout');
@@ -21,5 +22,9 @@
         {/if}
     </div>
 </main>
+
+{#if $page.props.flash.message}
+    <Alert>{@html $page.props.flash.message}</Alert>
+{/if}
 
 <slot />
