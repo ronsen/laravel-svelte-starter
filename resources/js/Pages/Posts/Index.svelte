@@ -15,7 +15,7 @@
     }
 
     function submit() {
-        $form.delete('/posts/' + post.id);
+        $form.delete(`/posts/${post.id}`);
         dialog.close();
     }
 </script>

@@ -687,15 +687,12 @@ const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
 }, Symbol.toStringTag, { value: "Module" }));
 const Login = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $form, $$unsubscribe_form;
-  let $page, $$unsubscribe_page;
-  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   let form = useForm({ email: "", password: "" });
   $$unsubscribe_form = subscribe(form, (value) => $form = value);
   $$unsubscribe_form();
-  $$unsubscribe_page();
   return `${$$result.head += `<!-- HEAD_svelte-1mf31g6_START -->${$$result.title = `<title>Log In</title>`, ""}<!-- HEAD_svelte-1mf31g6_END -->`, ""} ${validate_component(Layout, "Layout").$$render($$result, {}, {}, {
     default: () => {
-      return `<div class="w-full md:w-2/3 md:mx-auto"><form><input type="hidden" name="_token"${add_attribute("value", $page.props.csrfToken, 0)}> <div class="mb-3"><input type="email" placeholder="E-mail" class="input input-bordered w-full"${add_attribute("value", $form.email, 0)}> ${$form.errors.email ? `<div class="text-error text-sm font-bold mt-1">${escape($form.errors.email)}</div>` : ``}</div> <div class="mb-3"><input type="password" placeholder="Password" class="input input-bordered w-full"${add_attribute("value", $form.password, 0)}> ${$form.errors.password ? `<div class="text-error text-sm font-bold mt-1">${escape($form.errors.password)}</div>` : ``}</div> <button type="submit" class="btn btn-primary" ${$form.processing ? "disabled" : ""}>Log In</button></form></div>`;
+      return `<div class="w-full md:w-2/3 md:mx-auto"><form><div class="mb-3"><input type="email" placeholder="E-mail" class="input input-bordered w-full"${add_attribute("value", $form.email, 0)}> ${$form.errors.email ? `<div class="text-error text-sm font-bold mt-1">${escape($form.errors.email)}</div>` : ``}</div> <div class="mb-3"><input type="password" placeholder="Password" class="input input-bordered w-full"${add_attribute("value", $form.password, 0)}> ${$form.errors.password ? `<div class="text-error text-sm font-bold mt-1">${escape($form.errors.password)}</div>` : ``}</div> <button type="submit" class="btn btn-primary" ${$form.processing ? "disabled" : ""}>Log In</button></form></div>`;
     }
   })}`;
 });
@@ -739,15 +736,12 @@ const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
 }, Symbol.toStringTag, { value: "Module" }));
 const Create = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $form, $$unsubscribe_form;
-  let $page, $$unsubscribe_page;
-  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   let form = useForm({ title: null, content: null });
   $$unsubscribe_form = subscribe(form, (value) => $form = value);
   $$unsubscribe_form();
-  $$unsubscribe_page();
   return `${$$result.head += `<!-- HEAD_svelte-jkbflm_START -->${$$result.title = `<title>Add New Post</title>`, ""}<!-- HEAD_svelte-jkbflm_END -->`, ""} ${validate_component(Layout, "Layout").$$render($$result, {}, {}, {
     default: () => {
-      return `<form><input type="hidden" name="_token"${add_attribute("value", $page.props.csrfToken, 0)}> <div class="mb-3"><input type="text" placeholder="Title" class="input input-bordered w-full"${add_attribute("value", $form.title, 0)}> ${$form.errors.title ? `<div class="text-error text-sm font-bold mt-1">${escape($form.errors.title)}</div>` : ``}</div> <div class="mb-3"><textarea rows="5" placeholder="Content" class="textarea textarea-bordered w-full">${escape($form.content || "")}</textarea></div> <button type="submit" class="btn btn-primary" ${$form.processing ? "disabled" : ""}>Save</button></form>`;
+      return `<form><div class="mb-3"><input type="text" placeholder="Title" class="input input-bordered w-full"${add_attribute("value", $form.title, 0)}> ${$form.errors.title ? `<div class="text-error text-sm font-bold mt-1">${escape($form.errors.title)}</div>` : ``}</div> <div class="mb-3"><textarea rows="5" placeholder="Content" class="textarea textarea-bordered w-full">${escape($form.content || "")}</textarea></div> <button type="submit" class="btn btn-primary" ${$form.processing ? "disabled" : ""}>Save</button></form>`;
     }
   })}`;
 });
@@ -757,18 +751,15 @@ const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
 }, Symbol.toStringTag, { value: "Module" }));
 const Edit = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $form, $$unsubscribe_form;
-  let $page, $$unsubscribe_page;
-  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   let { post } = $$props;
   let form = useForm({ title: post.title, content: post.content });
   $$unsubscribe_form = subscribe(form, (value) => $form = value);
   if ($$props.post === void 0 && $$bindings.post && post !== void 0)
     $$bindings.post(post);
   $$unsubscribe_form();
-  $$unsubscribe_page();
   return `${$$result.head += `<!-- HEAD_svelte-jtmlrv_START -->${$$result.title = `<title>Edit Post</title>`, ""}<!-- HEAD_svelte-jtmlrv_END -->`, ""} ${validate_component(Layout, "Layout").$$render($$result, {}, {}, {
     default: () => {
-      return `<form><input type="hidden" name="_token"${add_attribute("value", $page.props.csrfToken, 0)}> <div class="mb-3"><input type="text" placeholder="Title" class="input input-bordered w-full"${add_attribute("value", $form.title, 0)}> ${$form.errors.title ? `<div class="text-error font-bold text-sm mt-1">${escape($form.errors.title)}</div>` : ``}</div> <div class="mb-3"><textarea rows="10" placeholder="Content" class="textarea textarea-bordered w-full">${escape($form.content || "")}</textarea></div> <button type="submit" class="btn btn-primary" ${$form.processing ? "disabled" : ""}>Save</button></form>`;
+      return `<form><div class="mb-3"><input type="text" placeholder="Title" class="input input-bordered w-full"${add_attribute("value", $form.title, 0)}> ${$form.errors.title ? `<div class="text-error font-bold text-sm mt-1">${escape($form.errors.title)}</div>` : ``}</div> <div class="mb-3"><textarea rows="10" placeholder="Content" class="textarea textarea-bordered w-full">${escape($form.content || "")}</textarea></div> <button type="submit" class="btn btn-primary" ${$form.processing ? "disabled" : ""}>Save</button></form>`;
     }
   })}`;
 });
@@ -851,7 +842,7 @@ const Show = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         }
       )} <button title="Delete Post" class="text-gray-500" data-svelte-h="svelte-or3z96"><i class="bi bi-trash"></i></button></div>` : ``}</div> <div class="content prose max-w-none mb-3"><!-- HTML_TAG_START -->${post.contentToHtml}<!-- HTML_TAG_END --></div></article>`;
     }
-  })} <dialog class="modal"${add_attribute("this", dialog, 0)}><form class="modal-box"><h3 class="font-bold text-lg" data-svelte-h="svelte-1wl5w2x">Confirm</h3> <p class="py-4" data-svelte-h="svelte-11bh441">Delete this post?</p> <div class="modal-action"><button type="submit" class="btn btn-error btn-sm" data-svelte-h="svelte-16ac55">Yes</button> <button class="btn btn-neutral btn-sm" data-svelte-h="svelte-uzaast">No</button></div></form></dialog>`;
+  })} <dialog class="modal"${add_attribute("this", dialog, 0)}><form class="modal-box"><h3 class="font-bold text-lg" data-svelte-h="svelte-1wl5w2x">Confirm</h3> <p class="py-4" data-svelte-h="svelte-11bh441">Delete this post?</p> <div class="modal-action"><button class="btn btn-neutral btn-sm" data-svelte-h="svelte-uzaast">No</button> <button type="submit" class="btn btn-error btn-sm" data-svelte-h="svelte-16ac55">Yes</button></div></form></dialog>`;
 });
 const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,

@@ -1,5 +1,5 @@
 <script>
-    import { page, useForm } from "@inertiajs/svelte";
+    import { useForm } from "@inertiajs/svelte";
     import Layout from "../Layout.svelte";
 
     let form = useForm({
@@ -21,7 +21,6 @@
 <Layout>
     <div class="w-full md:w-2/3 md:mx-auto">
         <form on:submit|preventDefault={submit}>
-            <input type="hidden" name="_token" value="{$page.props.csrfToken}">
             <div class="mb-3">
                 <input type="email" bind:value={$form.email} placeholder="E-mail" class="input input-bordered w-full">
                 {#if $form.errors.email}

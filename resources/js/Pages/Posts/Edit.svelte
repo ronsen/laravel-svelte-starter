@@ -1,5 +1,5 @@
 <script>
-    import { page, useForm } from "@inertiajs/svelte";
+    import { useForm } from "@inertiajs/svelte";
     import Layout from "../Layout.svelte";
 
     export let post;
@@ -20,7 +20,6 @@
 
 <Layout>
     <form on:submit|preventDefault={submit}>
-        <input type="hidden" name="_token" value="{$page.props.csrfToken}">
         <div class="mb-3">
             <input type="text" bind:value={$form.title} placeholder="Title" class="input input-bordered w-full">
             {#if $form.errors.title}
