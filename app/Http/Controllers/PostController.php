@@ -38,9 +38,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->update();
 
-        session()->flash('message', "<strong>{$post->title}</strong> has been updated.");
-
-        return to_route('posts.show', $post);
+        return back()->with('message', "<strong>{$post->title}</strong> has been updated.");;
     }
 
     public function show(Post $post): Response
