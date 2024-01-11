@@ -9,7 +9,7 @@
     @inertiaHead
 </head>
 
-<body class="container mx-auto my-12">
+<body class="container mx-auto md:w-[720px] my-12">
     @inertia
 </body>
 
