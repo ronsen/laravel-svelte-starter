@@ -1,6 +1,6 @@
 <script>
     import { page, Link, useForm } from "@inertiajs/svelte";
-    import Layout from "../Layout.svelte";
+    import App from "../Layouts/App.svelte";
 
     export let post;
     let dialog;
@@ -19,7 +19,7 @@
     <title>{post.title}</title>
 </svelte:head>
 
-<Layout>
+<App>
     <article>
         <div class="flex justify-between items-center border-b border-base-300 pb-3 mb-3">
             <div class="title font-bold">{post.title}</div>
@@ -36,7 +36,7 @@
             {@html post.contentToHtml}
         </div>
     </article>
-</Layout>
+</App>
 
 <dialog bind:this={dialog} class="modal">
     <form on:submit|preventDefault={submit} class="modal-box">

@@ -1,6 +1,6 @@
 <script>
     import { useForm } from "@inertiajs/svelte";
-    import Layout from "../Layout.svelte";
+    import App from "../Layouts/App.svelte";
 
     let form = useForm({
         title: null,
@@ -16,7 +16,7 @@
     <title>Add New Post</title>
 </svelte:head>
 
-<Layout>
+<App>
     <form on:submit|preventDefault={submit}>
         <div class="mb-3">
             <input type="text" bind:value={$form.title} placeholder="Title" class="input input-bordered w-full">
@@ -29,4 +29,4 @@
         </div>
         <button type="submit" class="btn btn-primary" disabled={$form.processing}>Save</button>
     </form>
-</Layout>
+</App>

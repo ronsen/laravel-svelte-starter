@@ -1,8 +1,8 @@
 <script>
     import { page, Link, useForm } from "@inertiajs/svelte";
-    import Layout from "../Layout.svelte";
     import Alert from "../Components/Alert.svelte";
     import Pagination from "../Components/Pagination.svelte";
+    import App from "../Layouts/App.svelte";
 
     export let posts;
     let dialog;
@@ -24,7 +24,7 @@
     <title>{$page.props.appName}</title>
 </svelte:head>
 
-<Layout>
+<App>
     {#if posts.data.length == 0}
         <Alert>Empty.</Alert>
     {:else}
@@ -45,7 +45,7 @@
 
         <Pagination data={posts} />
     {/if}
-</Layout>
+</App>
 
 <dialog bind:this={dialog} class="modal">
     <form on:submit|preventDefault={submit} class="modal-box">
