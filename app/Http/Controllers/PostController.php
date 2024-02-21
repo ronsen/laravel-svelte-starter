@@ -38,7 +38,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->update();
 
-        return back()->with('message', "<strong>{$post->title}</strong> has been updated.");;
+        return back()->with('message', "<strong>{$post->title}</strong> has been updated.");
     }
 
     public function show(Post $post): Response
