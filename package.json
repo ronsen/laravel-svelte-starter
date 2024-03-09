@@ -6,7 +6,7 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "@sveltejs/vite-plugin-svelte": "^3.0.1",
+        "@sveltejs/vite-plugin-svelte": "^3.0.2",
         "autoprefixer": "^10.4.14",
         "axios": "^1.6.4",
         "daisyui": "^4.6.0",
