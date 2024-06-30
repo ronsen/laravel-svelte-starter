@@ -3,7 +3,7 @@
 Starter template using Laravel and Svelte.
 
 This starter template includes:
-- Laravel 10
+- Laravel 11
 - Svelte
 - Inertia.js
 - Vite
