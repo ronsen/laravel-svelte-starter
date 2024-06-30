@@ -9,35 +9,35 @@ use Inertia\Response;
 
 class AuthController extends Controller
 {
-    public function create(): Response
-    {
-        return Inertia::render('Auth/Login');
-    }
+	public function create(): Response
+	{
+		return Inertia::render('Auth/Login');
+	}
 
-    public function store(Request $request): RedirectResponse
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required']
-        ]);
+	public function store(Request $request): RedirectResponse
+	{
+		$credentials = $request->validate([
+			'email' => ['required', 'email'],
+			'password' => ['required']
+		]);
 
-        if (auth()->attempt($credentials)) {
-            $request->session()->regenerate();
- 
-            return redirect()->intended('/');
-        }
+		if (auth()->attempt($credentials)) {
+			$request->session()->regenerate();
 
-        return back()->withErrors([
-            'email' => 'Credentials error.',
-        ])->onlyInput('email');
-    }
+			return redirect()->intended('/');
+		}
 
-    public function logout(Request $request): RedirectResponse
-    {
-        auth()->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        
-        return redirect('/');
-    }
+		return back()->withErrors([
+			'email' => 'Credentials error.',
+		])->onlyInput('email');
+	}
+
+	public function logout(Request $request): RedirectResponse
+	{
+		auth()->logout();
+		$request->session()->invalidate();
+		$request->session()->regenerateToken();
+
+		return redirect('/');
+	}
 }

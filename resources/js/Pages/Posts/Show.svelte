@@ -33,7 +33,7 @@
         </div>
     
         <div class="content prose max-w-none mb-3">
-            {@html post.contentToHtml}
+            {@html post.content_to_html}
         </div>
     </article>
 </App>

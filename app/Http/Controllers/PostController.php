@@ -10,48 +10,48 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function create(): Response
-    {
-        return Inertia::render('Posts/Create');
-    }
+	public function create(): Response
+	{
+		return Inertia::render('Posts/Create');
+	}
 
-    public function store(Request $request): RedirectResponse
-    {
-        $post = Post::create($request->validate([
-            'title' => ['required'],
-            'content' => []
-        ]));
+	public function store(Request $request): RedirectResponse
+	{
+		$post = Post::create($request->validate([
+			'title' => ['required'],
+			'content' => []
+		]));
 
-        return to_route('posts.show', $post);
-    }
+		return to_route('posts.show', $post);
+	}
 
-    public function edit(Post $post): Response
-    {
-        return Inertia::render('Posts/Edit', ['post' => $post]);
-    }
+	public function edit(Post $post): Response
+	{
+		return Inertia::render('Posts/Edit', ['post' => $post]);
+	}
 
-    public function update(Post $post, Request $request): RedirectResponse
-    {
-        $request->validate(['title' => ['required']]);
+	public function update(Post $post, Request $request): RedirectResponse
+	{
+		$request->validate(['title' => ['required']]);
 
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->update();
+		$post->title = $request->title;
+		$post->content = $request->content;
+		$post->update();
 
-        return back()->with('message', "<strong>{$post->title}</strong> has been updated.");
-    }
+		return back()->with('message', "<strong>{$post->title}</strong> has been updated.");
+	}
 
-    public function show(Post $post): Response
-    {
-        return Inertia::render('Posts/Show', ['post' => $post]);
-    }
+	public function show(Post $post): Response
+	{
+		return Inertia::render('Posts/Show', ['post' => $post]);
+	}
 
-    public function destroy(Post $post): RedirectResponse
-    {
-        session()->flash('message', "<strong>{$post->title}</strong> has been deleted.");
+	public function destroy(Post $post): RedirectResponse
+	{
+		session()->flash('message', "<strong>{$post->title}</strong> has been deleted.");
 
-        $post->delete();
+		$post->delete();
 
-        return to_route('home');
-    }
+		return to_route('home');
+	}
 }
