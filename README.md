@@ -43,4 +43,4 @@ Build the app:
 npm run buid
 ```
 
-
+Sign in with email `admin@example.com` and password `password`.

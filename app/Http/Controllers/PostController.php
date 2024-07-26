@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Post;
@@ -48,7 +49,7 @@ class PostController extends Controller
 
 	public function destroy(Post $post): RedirectResponse
 	{
-		session()->flash('message', "<strong>{$post->title}</strong> has been deleted.");
+		Session::flash('message', "<strong>{$post->title}</strong> has been deleted.");
 
 		$post->delete();
 
