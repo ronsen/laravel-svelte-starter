@@ -3,6 +3,9 @@
     import { router } from '@inertiajs/svelte';
     import Alert from "../Components/Alert.svelte";
 
+	import Fa from "svelte-fa";
+	import { faCirclePlus, faRightFromBracket, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+
     function logout() {
         router.post('/logout');
     }
@@ -14,12 +17,12 @@
 
         <div class="inline-flex gap-3">
             {#if $page.props.auth.user}
-                <Link href="/posts/create"><i class="bi bi-plus-circle"></i></Link>
-                <button on:click|preventDefault={logout}><i class="bi bi-box-arrow-right"></i></button>
+                <Link href="/posts/create"><Fa icon={faCirclePlus} /></Link>
+                <button on:click|preventDefault={logout}><Fa icon={faRightFromBracket} /></button>
             {/if}
             
             {#if ! $page.props.auth.user}
-                <Link href="/login"><i class="bi bi-box-arrow-in-right"></i></Link>
+                <Link href="/login"><Fa icon={faRightToBracket} /></Link>
             {/if}
         </div>
     </nav>
