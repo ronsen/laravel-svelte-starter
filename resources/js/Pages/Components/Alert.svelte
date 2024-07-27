@@ -1,4 +1,7 @@
 <script>
+	import Fa from "svelte-fa";
+    import { faCircleInfo, faXmark } from "@fortawesome/free-solid-svg-icons";
+
     let show = true;
 
     function close() {
@@ -8,12 +11,12 @@
 
 {#if show}
     <div class="alert alert-warning shadow-lg mb-6">
-        <div>
-            <i class="bi bi-info-circle"></i>
+        <div class="inline-flex items-center gap-1">
+            <Fa icon={faCircleInfo} />
 
             <slot />
         </div>
         <span></span>
-        <button on:click|preventDefault={close}><i class="bi bi-x-circle"></i></button>
+        <button on:click|preventDefault={close}><Fa icon={faXmark} /></button>
     </div>
 {/if}
