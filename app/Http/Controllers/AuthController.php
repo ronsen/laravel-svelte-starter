@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -14,30 +16,21 @@ class AuthController extends Controller
 		return Inertia::render('Auth/Login');
 	}
 
-	public function store(Request $request): RedirectResponse
+	public function store(LoginRequest $request): RedirectResponse
 	{
-		$credentials = $request->validate([
-			'email' => ['required', 'email'],
-			'password' => ['required']
-		]);
+		$request->authenticate();
+		$request->session()->regenerate();
 
-		if (auth()->attempt($credentials)) {
-			$request->session()->regenerate();
-
-			return redirect()->intended('/');
-		}
-
-		return back()->withErrors([
-			'email' => 'Credentials error.',
-		])->onlyInput('email');
+        return redirect()->intended(route('home', absolute: false));
 	}
 
-	public function logout(Request $request): RedirectResponse
+	public function destroy(Request $request): RedirectResponse
 	{
-		auth()->logout();
-		$request->session()->invalidate();
-		$request->session()->regenerateToken();
+		Auth::guard('web')->logout();
 
-		return redirect('/');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
 	}
 }
