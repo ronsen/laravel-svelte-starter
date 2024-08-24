@@ -13,9 +13,7 @@ RUN apt update
 RUN apt install -y software-properties-common \
 	curl \
 	zip \
-	unzip \
-	nginx \
-	supervisor
+	unzip
 
 RUN apt install -y php-cli \
 	php-fpm \
