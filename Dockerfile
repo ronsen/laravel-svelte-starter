@@ -4,10 +4,6 @@ WORKDIR /var/www
 
 ARG DEBIAN_FRONTEND noninteractive
 
-COPY . .
-
-RUN cp .env.example .env
-
 RUN apt update
 
 RUN apt install -y software-properties-common \
@@ -43,6 +39,10 @@ RUN apt update && apt install -y nodejs
 RUN apt clean && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+
+COPY . .
+RUN cp .env.example .env
+
 RUN composer install --optimize-autoloader
 
 RUN php artisan key:generate
