@@ -1,8 +1,11 @@
+<script context="module">
+    export { default as layout } from "../Layouts/App.svelte";
+</script>
+
 <script>
     import { page, Link, useForm } from "@inertiajs/svelte";
     import Alert from "../Components/Alert.svelte";
     import Pagination from "../Components/Pagination.svelte";
-    import App from "../Layouts/App.svelte";
 
 	import Fa from "svelte-fa";
     import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -27,28 +30,26 @@
     <title>{$page.props.appName}</title>
 </svelte:head>
 
-<App>
-    {#if posts.data.length == 0}
-        <Alert>Empty.</Alert>
-    {:else}
-        {#each posts.data as post}
-            <div class="flex justify-between items-center border-b border-base-300 pb-2 mb-2">
-                <div class="note-title">
-                    <Link href="/posts/{post.id}">{post.title}</Link>
-                </div>
-
-                {#if $page.props.auth.user}
-                    <div class="inline-flex items-center gap-3">
-                        <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><Fa icon={faPencil} /></Link>
-                        <button title="Delete Post" class="text-gray-500" on:click={() => destroy(post)}><Fa icon={faTrash} /></button>
-                    </div>
-                {/if}
+{#if posts.data.length == 0}
+    <Alert>Empty.</Alert>
+{:else}
+    {#each posts.data as post}
+        <div class="flex justify-between items-center border-b border-base-300 pb-2 mb-2">
+            <div class="note-title">
+                <Link href="/posts/{post.id}">{post.title}</Link>
             </div>
-        {/each}
 
-        <Pagination data={posts} />
-    {/if}
-</App>
+            {#if $page.props.auth.user}
+                <div class="inline-flex items-center gap-3">
+                    <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><Fa icon={faPencil} /></Link>
+                    <button title="Delete Post" class="text-gray-500" on:click={() => destroy(post)}><Fa icon={faTrash} /></button>
+                </div>
+            {/if}
+        </div>
+    {/each}
+
+    <Pagination data={posts} />
+{/if}
 
 <dialog bind:this={dialog} class="modal">
     <form on:submit|preventDefault={submit} class="modal-box">

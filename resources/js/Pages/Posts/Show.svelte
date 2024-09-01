@@ -1,6 +1,9 @@
+<script context="module">
+    export { default as layout } from "../Layouts/App.svelte";
+</script>
+
 <script>
     import { page, Link, useForm } from "@inertiajs/svelte";
-    import App from "../Layouts/App.svelte";
 
 	import Fa from "svelte-fa";
     import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -22,24 +25,22 @@
     <title>{post.title}</title>
 </svelte:head>
 
-<App>
-    <article>
-        <div class="flex justify-between items-center border-b border-base-300 pb-3 mb-3">
-            <div class="title font-bold">{post.title}</div>
+<article>
+    <div class="flex justify-between items-center border-b border-base-300 pb-3 mb-3">
+        <div class="title font-bold">{post.title}</div>
 
-            {#if $page.props.auth.user}
-                <div class="inline-flex items-center gap-3">
-                    <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><Fa icon={faPencil} /></Link>
-                    <button title="Delete Post" class="text-gray-500" on:click={() => destroy()}><Fa icon={faTrash} /></button>
-                </div>
-            {/if}
-        </div>
-    
-        <div class="content prose max-w-none mb-3">
-            {@html post.content_to_html}
-        </div>
-    </article>
-</App>
+        {#if $page.props.auth.user}
+            <div class="inline-flex items-center gap-3">
+                <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><Fa icon={faPencil} /></Link>
+                <button title="Delete Post" class="text-gray-500" on:click={() => destroy()}><Fa icon={faTrash} /></button>
+            </div>
+        {/if}
+    </div>
+
+    <div class="content prose max-w-none mb-3">
+        {@html post.content_to_html}
+    </div>
+</article>
 
 <dialog bind:this={dialog} class="modal">
     <form on:submit|preventDefault={submit} class="modal-box">
