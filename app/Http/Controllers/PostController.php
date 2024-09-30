@@ -35,8 +35,8 @@ class PostController extends Controller
 	{
 		$request->validate(['title' => ['required']]);
 
-		$post->title = $request->title;
-		$post->content = $request->content;
+		$post->title = $request->input('title');
+		$post->content = $request->input('content');
 		$post->update();
 
 		return back()->with('message', "<strong>{$post->title}</strong> has been updated.");
