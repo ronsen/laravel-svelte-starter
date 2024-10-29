@@ -9,7 +9,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "autoprefixer": "^10.4.14",
     "axios": "^1.6.4",
-    "daisyui": "^4.6.0",
+    "concurrently": "^9.0.1",
     "laravel-vite-plugin": "^1.0",
     "postcss": "^8.4.26",
     "svelte": "^4.0.5",

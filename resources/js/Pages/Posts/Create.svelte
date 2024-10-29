@@ -7,11 +7,11 @@
 
     let form = useForm({
         title: null,
-        content: null
+        content: null,
     });
 
     function submit() {
-        $form.post('/posts');
+        $form.post("/posts");
     }
 </script>
 
@@ -21,13 +21,29 @@
 
 <form on:submit|preventDefault={submit}>
     <div class="mb-3">
-        <input type="text" bind:value={$form.title} placeholder="Title" class="input input-bordered w-full">
+        <input
+            type="text"
+            bind:value={$form.title}
+            placeholder="Title"
+            class="p-2 border rounded-lg w-full shadow-sm"
+        />
         {#if $form.errors.title}
-            <div class="text-error text-sm font-bold mt-1">{$form.errors.title}</div>
+            <div class="text-red-500 text-sm font-bold mt-1">
+                {$form.errors.title}
+            </div>
         {/if}
     </div>
     <div class="mb-3">
-        <textarea bind:value={$form.content} rows="5" placeholder="Content" class="textarea textarea-bordered w-full" />
+        <textarea
+            bind:value={$form.content}
+            rows="5"
+            placeholder="Content"
+            class="p-2 border rounded-lg w-full shadow-sm"
+        />
     </div>
-    <button type="submit" class="btn btn-primary" disabled={$form.processing}>Save</button>
+    <button
+        type="submit"
+        class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100"
+        disabled={$form.processing}>Save</button
+    >
 </form>

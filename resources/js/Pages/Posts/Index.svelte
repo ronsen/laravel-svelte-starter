@@ -7,7 +7,7 @@
     import Alert from "../Components/Alert.svelte";
     import Pagination from "../Components/Pagination.svelte";
 
-	import Fa from "svelte-fa";
+    import Fa from "svelte-fa";
     import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
 
     export let posts;
@@ -34,15 +34,24 @@
     <Alert>Empty.</Alert>
 {:else}
     {#each posts.data as post}
-        <div class="flex justify-between items-center border-b border-base-300 pb-2 mb-2">
+        <div class="flex justify-between items-center border-b pb-2 mb-2">
             <div class="note-title">
                 <Link href="/posts/{post.id}">{post.title}</Link>
             </div>
 
             {#if $page.props.auth.user}
                 <div class="inline-flex items-center gap-3">
-                    <Link href="/posts/{post.id}/edit" title="Edit Post" class="text-gray-500"><Fa icon={faPencil} /></Link>
-                    <button title="Delete Post" class="text-gray-500" on:click={() => destroy(post)}><Fa icon={faTrash} /></button>
+                    <Link
+                        href="/posts/{post.id}/edit"
+                        title="Edit Post"
+                        class="text-zinc-500"><Fa icon={faPencil} /></Link
+                    >
+                    <button
+                        title="Delete Post"
+                        class="text-zinc-500"
+                        on:click={() => destroy(post)}
+                        ><Fa icon={faTrash} /></button
+                    >
                 </div>
             {/if}
         </div>
@@ -51,15 +60,25 @@
     <Pagination data={posts} />
 {/if}
 
-<dialog bind:this={dialog} class="modal">
-    <form on:submit|preventDefault={submit} class="modal-box">
-        <input type="hidden" bind:this={post}>
-        <h3 class="font-bold text-lg">Confirm</h3>
+<dialog
+    bind:this={dialog}
+    class="w-full md:w-1/2 p-6 rounded-lg shadow text-black/90"
+>
+    <form on:submit|preventDefault={submit}>
+        <input type="hidden" bind:this={post} />
+        <h3 class="font-bold">Confirm</h3>
         <p class="py-4">Delete this post?</p>
 
-        <div class="modal-action">
-            <button class="btn btn-neutral btn-sm" on:click|preventDefault={() => dialog.close()}>No</button>
-            <button type="submit" class="btn btn-error btn-sm">Yes</button>
+        <div class="inline-flex gap-2">
+            <button
+                class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100"
+                on:click|preventDefault={() => dialog.close()}>No</button
+            >
+            <button
+                type="submit"
+                class="p-2 border border-red-500 bg-red-500 rounded-lg text-sm shadow-sm hover:bg-red-600 text-white/90"
+                >Yes</button
+            >
         </div>
     </form>
 </dialog>

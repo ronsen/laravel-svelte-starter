@@ -8,7 +8,7 @@
     @inertiaHead
 </head>
 
-<body>
+<body class="bg-zinc-50 text-black/90">
     @inertia
 </body>
 
