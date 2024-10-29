@@ -4,11 +4,9 @@ Starter template using Laravel and Svelte.
 
 This starter template includes:
 - Laravel 11
-- Svelte
-- Inertia.js
-- Vite
+- Svelte 4
+- Inertia
 - Tailwind CSS
-- daisyUI
 - sqlite
 
 ### Installation
