@@ -9,6 +9,7 @@ export default {
         './resources/**/*.js',
         './resources/js/**/*.svelte',
     ],
+	darkMode: 'selector',
     theme: {
         extend: {
             fontFamily: {

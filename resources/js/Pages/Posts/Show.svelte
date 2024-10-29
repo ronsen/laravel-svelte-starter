@@ -54,7 +54,7 @@
 
 <dialog
     bind:this={dialog}
-    class="w-full md:w-1/2 p-6 rounded-lg shadow text-black/90"
+    class="w-full md:w-1/2 p-6 rounded-lg shadow text-black/90 dark:bg-zinc-800 dark:text-white/90"
 >
     <form on:submit|preventDefault={submit}>
         <h3 class="font-bold">Confirm</h3>
@@ -62,7 +62,7 @@
 
         <div class="inline-flex gap-2">
             <button
-                class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100"
+                class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100 dark:hover:bg-zinc-700"
                 on:click|preventDefault={() => dialog.close()}>No</button
             >
             <button

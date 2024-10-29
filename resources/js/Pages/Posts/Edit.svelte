@@ -27,7 +27,7 @@
             type="text"
             bind:value={$form.title}
             placeholder="Title"
-            class="p-2 border rounded-lg w-full shadow-sm"
+            class="p-2 border rounded-lg w-full shadow-sm dark:bg-zinc-900 dark:border-zinc-500"
         />
         {#if $form.errors.title}
             <div class="text-red-500 font-bold text-sm mt-1">
@@ -40,12 +40,12 @@
             bind:value={$form.content}
             rows="10"
             placeholder="Content"
-            class="p-2 border rounded-lg w-full shadow-sm"
+            class="p-2 border rounded-lg w-full shadow-sm dark:bg-zinc-900 dark:border-zinc-500"
         />
     </div>
     <button
         type="submit"
-        class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100"
+        class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100 dark:border-zinc-500 dark:hover:bg-zinc-800"
         disabled={$form.processing}>Save</button
     >
 </form>

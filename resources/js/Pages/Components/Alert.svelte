@@ -13,10 +13,11 @@
     <div
         class="flex justify-between items-center gap-3 border p-3 rounded-lg shadow mb-6"
     >
-        <div class="inline-flex items-center gap-1">
+        <div class="inline-flex items-center gap-3">
             <Fa icon={faCircleInfo} />
-
-            <slot />
+            <div>
+                <slot />
+            </div>
         </div>
         <span></span>
         <button on:click|preventDefault={close}><Fa icon={faXmark} /></button>

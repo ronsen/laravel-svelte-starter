@@ -34,7 +34,7 @@
     <Alert>Empty.</Alert>
 {:else}
     {#each posts.data as post}
-        <div class="flex justify-between items-center border-b pb-2 mb-2">
+        <div class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-2">
             <div class="note-title">
                 <Link href="/posts/{post.id}">{post.title}</Link>
             </div>
@@ -62,7 +62,7 @@
 
 <dialog
     bind:this={dialog}
-    class="w-full md:w-1/2 p-6 rounded-lg shadow text-black/90"
+    class="w-full md:w-1/2 p-6 rounded-lg shadow text-black/90 dark:bg-zinc-800 dark:text-white/90"
 >
     <form on:submit|preventDefault={submit}>
         <input type="hidden" bind:this={post} />
@@ -71,7 +71,7 @@
 
         <div class="inline-flex gap-2">
             <button
-                class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100"
+                class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100 dark:hover:bg-zinc-700"
                 on:click|preventDefault={() => dialog.close()}>No</button
             >
             <button
