@@ -27,21 +27,17 @@
 
 <article>
     <div
-        class="flex justify-between items-center border-b border-base-300 pb-3 mb-3"
+        class="flex justify-between items-center border-b pb-3 mb-3"
     >
         <div class="title font-bold">{post.title}</div>
 
         {#if $page.props.auth.user}
             <div class="inline-flex items-center gap-3">
-                <Link
-                    href="/posts/{post.id}/edit"
-                    title="Edit Post"
-                    class="text-gray-500"><Fa icon={faPencil} /></Link
+                <Link href="/posts/{post.id}/edit" title="Edit Post"
+                    ><Fa icon={faPencil} /></Link
                 >
-                <button
-                    title="Delete Post"
-                    class="text-gray-500"
-                    on:click={() => destroy()}><Fa icon={faTrash} /></button
+                <button title="Delete Post" on:click={() => destroy()}
+                    ><Fa icon={faTrash} /></button
                 >
             </div>
         {/if}
@@ -62,12 +58,12 @@
 
         <div class="inline-flex gap-2">
             <button
-                class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100 dark:hover:bg-zinc-700"
+                class="p-2 border border-zinc-500 rounded-lg text-sm"
                 on:click|preventDefault={() => dialog.close()}>No</button
             >
             <button
                 type="submit"
-                class="p-2 border border-red-500 bg-red-500 rounded-lg text-sm shadow-sm hover:bg-red-600 text-white/90"
+                class="p-2 border border-zinc-500 rounded-lg text-sm"
                 >Yes</button
             >
         </div>

@@ -27,7 +27,7 @@
             type="email"
             bind:value={$form.email}
             placeholder="E-mail"
-            class="p-2 border rounded-lg w-full shadow-sm"
+            class="rounded-lg dark:bg-zinc-800 w-full"
         />
         {#if $form.errors.email}
             <div class="text-red-500 text-sm mt-1">{$form.errors.email}</div>
@@ -38,7 +38,7 @@
             type="password"
             bind:value={$form.password}
             placeholder="Password"
-            class="p-2 border rounded-lg w-full shadow-sm"
+            class="rounded-lg dark:bg-zinc-800 w-full"
         />
         {#if $form.errors.password}
             <div class="text-red-500 text-sm mt-1">{$form.errors.password}</div>
@@ -46,7 +46,7 @@
     </div>
     <button
         type="submit"
-        class="p-2 border rounded-lg text-sm shadow-sm hover:bg-zinc-100"
+        class="p-2 border border-zinc-500 rounded-lg text-sm"
         disabled={$form.processing}>Log In</button
     >
 </form>
