@@ -2,24 +2,24 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "dev": "vite"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@sveltejs/vite-plugin-svelte": "^4.0.1",
     "@tailwindcss/forms": "^0.5.9",
-    "autoprefixer": "^10.4.14",
-    "axios": "^1.6.4",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.4",
     "concurrently": "^9.0.1",
     "laravel-vite-plugin": "^1.0",
     "postcss": "^8.4.26",
-    "svelte": "^4.0.5",
+    "svelte": "^5.2.3",
     "tailwindcss": "^3.3.3",
     "vite": "^5.0"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@inertiajs/svelte": "^1.0.9",
+    "@inertiajs/svelte": "^2.0.0-beta.2",
     "svelte-fa": "^4.0.2"
   }
 }

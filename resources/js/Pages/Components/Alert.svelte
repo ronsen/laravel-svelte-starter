@@ -2,9 +2,12 @@
     import Fa from "svelte-fa";
     import { faCircleInfo, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-    let show = true;
+    let { children } = $props();
 
-    function close() {
+    let show = $state(true);
+
+    function close(e) {
+        e.preventDefault();
         show = !show;
     }
 </script>
@@ -16,10 +19,10 @@
         <div class="inline-flex items-center gap-3">
             <Fa icon={faCircleInfo} />
             <div>
-                <slot />
+                {@render children()}
             </div>
         </div>
         <span></span>
-        <button on:click|preventDefault={close}><Fa icon={faXmark} /></button>
+        <button onclick={close}><Fa icon={faXmark} /></button>
     </div>
 {/if}

@@ -25,16 +25,20 @@
             localStorage.setItem("theme", "light");
         }
     }
+
+    let { children } = $props();
 </script>
 
 <main class="container mx-auto md:w-[720px] my-6 px-6 md:my-12">
-    <nav class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-8">
-        <h1 class="font-bold uppercase">
+    <nav
+        class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-8"
+    >
+        <h1 class="font-bold">
             <Link href="/">{$page.props.appName}</Link>
         </h1>
 
         <div class="inline-flex gap-3">
-            <button on:click={toggleMode}
+            <button onclick={toggleMode}
                 ><Fa icon={faCircleHalfStroke} /></button
             >
 
@@ -55,5 +59,5 @@
         <Alert>{@html $page.props.flash.message}</Alert>
     {/if}
 
-    <slot />
+    {@render children()}
 </main>

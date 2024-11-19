@@ -7,7 +7,7 @@
 
     import Fa from "svelte-fa";
 
-    export let data;
+    let { data } = $props();
 </script>
 
 <div class="text-center mt-6">
