@@ -20,15 +20,17 @@
     function submit(e) {
         e.preventDefault();
         router.delete(`/posts/${post.id}`);
-		dialog.close();
+        dialog.close();
     }
 </script>
 
-<button type="button" onclick={destroy}><Fa icon={faTrash} /></button>
+<button type="button" class="cursor-pointer" onclick={destroy}
+    ><Fa icon={faTrash} /></button
+>
 
 <dialog
     bind:this={dialog}
-    class="w-full md:w-1/3 border border-zinc-100 dark:border-zinc-600 rounded-lg shadow dark:bg-zinc-900 dark:text-white/90 bg-zinc-50 backdrop:backdrop-blur"
+    class="w-full mx-auto my-auto -translate-x-0.5 md:w-1/3 border border-zinc-100 dark:border-zinc-600 rounded-lg shadow dark:bg-zinc-900 dark:text-white/90 bg-zinc-50 backdrop:backdrop-blur"
 >
     <form onsubmit={submit}>
         <div class="p-6">

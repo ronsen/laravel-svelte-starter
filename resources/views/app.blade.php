@@ -9,11 +9,11 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
 		rel="stylesheet" />
-	@vite(["resources/js/app.js", "resources/css/app.css"])
+	@vite(['resources/js/app.js', 'resources/css/app.css'])
 	@inertiaHead
 </head>
 
-<body class="dark:bg-zinc-900 dark:text-white/90 bg-zinc-50 font-sans text-black/90 antialiased">
+<body class="bg-zinc-50 font-sans text-black/90 antialiased dark:bg-zinc-900 dark:text-white/90">
 	@inertia
 </body>
 
