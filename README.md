@@ -3,7 +3,7 @@
 Starter template using Laravel and Svelte.
 
 This starter template includes:
-- Laravel 11
+- Laravel 12
 - Svelte 5
 - Inertia 2
 - Tailwind CSS
@@ -49,6 +49,6 @@ Installation using Docker:
 
 ```
 docker build -t laravel-svelte-starter .
-docker run -p 80:8000 -d laravel-svelte-starter
+docker run -p 8000:8000 -d laravel-svelte-starter
 ```
-Open `http://localhost/` on your browser.
+Open `http://localhost/8000` on your browser.
