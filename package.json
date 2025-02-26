@@ -16,7 +16,7 @@
     "postcss": "^8.5.1",
     "svelte": "^5.2.3",
     "tailwindcss": "^4.0.0",
-    "vite": "^6.0.5"
+    "vite": "^6.0.11"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
