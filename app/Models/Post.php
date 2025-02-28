@@ -23,7 +23,7 @@ class Post extends Model
 	public function contentToHtml(): Attribute
 	{
 		return new Attribute(
-			get: fn () => nl2br($this->content)
+			get: fn() => nl2br($this->content)
 		);
 	}
 }
