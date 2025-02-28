@@ -1,11 +1,6 @@
 <script>
-    import {
-        faArrowLeft,
-        faArrowRight,
-    } from "@fortawesome/free-solid-svg-icons";
     import { Link } from "@inertiajs/svelte";
-
-    import Fa from "svelte-fa";
+    import { MoveLeft, MoveRight } from "lucide-svelte";
 
     let { data } = $props();
 </script>
@@ -13,15 +8,15 @@
 <div class="text-center mt-6">
     <div class="flex justify-between items-center gap-4">
         {#if data.prev_page_url}
-            <Link href={data.prev_page_url}><Fa icon={faArrowLeft} /></Link>
+            <Link href={data.prev_page_url}><MoveLeft size={16} /></Link>
         {:else}
-            <button class="cursor-default"><Fa icon={faArrowLeft} /></button>
+            <button class="cursor-default"><MoveLeft size={16} /></button>
         {/if}
 
         {#if data.next_page_url}
-            <Link href={data.next_page_url}><Fa icon={faArrowRight} /></Link>
+            <Link href={data.next_page_url}><MoveRight size={16} /></Link>
         {:else}
-            <button class="cursor-default"><Fa icon={faArrowRight} /></button>
+            <button class="cursor-default"><MoveRight size={16} /></button>
         {/if}
     </div>
 </div>

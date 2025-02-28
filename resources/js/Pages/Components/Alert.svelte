@@ -1,6 +1,5 @@
 <script>
-    import Fa from "svelte-fa";
-    import { faCircleInfo, faXmark } from "@fortawesome/free-solid-svg-icons";
+    import { CircleAlert, X } from "lucide-svelte";
 
     let { children } = $props();
 
@@ -17,12 +16,12 @@
         class="flex justify-between items-center gap-3 border p-3 rounded-lg shadow mb-6"
     >
         <div class="inline-flex items-center gap-3">
-            <Fa icon={faCircleInfo} />
+            <CircleAlert size={16} />
             <div>
                 {@render children()}
             </div>
         </div>
         <span></span>
-        <button onclick={close}><Fa icon={faXmark} /></button>
+        <button onclick={close}><X size={16} /></button>
     </div>
 {/if}

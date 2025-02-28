@@ -3,11 +3,9 @@
 </script>
 
 <script>
-    import { page, Link, useForm } from "@inertiajs/svelte";
-	import Delete from "../Components/Delete.svelte";
-
-    import Fa from "svelte-fa";
-    import { faPencil } from "@fortawesome/free-solid-svg-icons";
+    import { page, Link } from "@inertiajs/svelte";
+    import { Pencil } from "lucide-svelte";
+    import Delete from "../Components/Delete.svelte";
 
     let { post } = $props();
 </script>
@@ -23,7 +21,7 @@
         {#if $page.props.auth.user}
             <div class="inline-flex items-center gap-3">
                 <Link href="/posts/{post.id}/edit" title="Edit Post"
-                    ><Fa icon={faPencil} /></Link
+                    ><Pencil size={16} /></Link
                 >
                 <Delete {post} />
             </div>

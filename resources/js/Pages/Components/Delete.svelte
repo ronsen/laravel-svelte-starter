@@ -1,8 +1,6 @@
 <script>
     import { router } from "@inertiajs/svelte";
-
-    import Fa from "svelte-fa";
-    import { faTrash } from "@fortawesome/free-solid-svg-icons";
+    import { Trash } from "lucide-svelte";
 
     let { post } = $props();
 
@@ -25,7 +23,7 @@
 </script>
 
 <button type="button" class="cursor-pointer" onclick={destroy}
-    ><Fa icon={faTrash} /></button
+    ><Trash size={16} /></button
 >
 
 <dialog

@@ -17,8 +17,7 @@
     "vite": "^6.0.11"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@inertiajs/svelte": "^2.0.0",
-    "svelte-fa": "^4.0.2"
+    "lucide-svelte": "^0.476.0"
   }
 }

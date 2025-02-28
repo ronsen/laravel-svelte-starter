@@ -1,14 +1,7 @@
 <script>
     import { page, Link, inertia } from "@inertiajs/svelte";
+    import { CirclePlus, LogIn, LogOut, SunMoon } from "lucide-svelte";
     import Alert from "../Components/Alert.svelte";
-
-    import Fa from "svelte-fa";
-    import {
-        faPlus,
-        faRightFromBracket,
-        faRightToBracket,
-        faCircleHalfStroke,
-    } from "@fortawesome/free-solid-svg-icons";
 
     function toggleMode() {
         const theme = localStorage.getItem("theme") ?? "light";
@@ -38,19 +31,19 @@
         </h1>
 
         <div class="inline-flex gap-3">
-            <button onclick={toggleMode}
-                ><Fa icon={faCircleHalfStroke} /></button
+            <button onclick={toggleMode} class="cursor-pointer"
+                ><SunMoon size={16} /></button
             >
 
             {#if $page.props.auth.user}
-                <Link href="/posts/create"><Fa icon={faPlus} /></Link>
+                <Link href="/posts/create"><CirclePlus size={16} /></Link>
                 <button use:inertia={{ href: "/logout", method: "post" }}
-                    ><Fa icon={faRightFromBracket} /></button
+                    ><LogOut size={16} /></button
                 >
             {/if}
 
             {#if !$page.props.auth.user}
-                <Link href="/login"><Fa icon={faRightToBracket} /></Link>
+                <Link href="/login"><LogIn size={16} /></Link>
             {/if}
         </div>
     </nav>
