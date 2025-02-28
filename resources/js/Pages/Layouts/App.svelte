@@ -1,56 +1,56 @@
 <script>
-    import { page, Link, inertia } from "@inertiajs/svelte";
-    import { CirclePlus, LogIn, LogOut, SunMoon } from "lucide-svelte";
-    import Alert from "../Components/Alert.svelte";
+	import { page, Link, inertia } from "@inertiajs/svelte";
+	import { CirclePlus, LogIn, LogOut, SunMoon } from "lucide-svelte";
+	import Alert from "../Components/Alert.svelte";
 
-    function toggleMode() {
-        const theme = localStorage.getItem("theme") ?? "light";
+	function toggleMode() {
+		const theme = localStorage.getItem("theme") ?? "light";
 
-        if (theme == "light") {
-            document.documentElement.classList.remove("light");
-            document.documentElement.classList.add("dark");
+		if (theme == "light") {
+			document.documentElement.classList.remove("light");
+			document.documentElement.classList.add("dark");
 
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-            document.documentElement.classList.add("light");
+			localStorage.setItem("theme", "dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+			document.documentElement.classList.add("light");
 
-            localStorage.setItem("theme", "light");
-        }
-    }
+			localStorage.setItem("theme", "light");
+		}
+	}
 
-    let { children } = $props();
+	let { children } = $props();
 </script>
 
 <main class="mx-auto max-w-2xl my-6 px-6 md:my-12">
-    <nav
-        class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-8"
-    >
-        <h1 class="font-bold">
-            <Link href="/">{$page.props.appName}</Link>
-        </h1>
+	<nav
+		class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-8"
+	>
+		<h1 class="font-bold">
+			<Link href="/">{$page.props.appName}</Link>
+		</h1>
 
-        <div class="inline-flex gap-3">
-            <button onclick={toggleMode} class="cursor-pointer"
-                ><SunMoon size={16} /></button
-            >
+		<div class="inline-flex gap-3">
+			<button onclick={toggleMode} class="cursor-pointer"
+				><SunMoon size={16} /></button
+			>
 
-            {#if $page.props.auth.user}
-                <Link href="/posts/create"><CirclePlus size={16} /></Link>
-                <button use:inertia={{ href: "/logout", method: "post" }}
-                    ><LogOut size={16} /></button
-                >
-            {/if}
+			{#if $page.props.auth.user}
+				<Link href="/posts/create"><CirclePlus size={16} /></Link>
+				<button use:inertia={{ href: "/logout", method: "post" }}
+					><LogOut size={16} /></button
+				>
+			{/if}
 
-            {#if !$page.props.auth.user}
-                <Link href="/login"><LogIn size={16} /></Link>
-            {/if}
-        </div>
-    </nav>
+			{#if !$page.props.auth.user}
+				<Link href="/login"><LogIn size={16} /></Link>
+			{/if}
+		</div>
+	</nav>
 
-    {#if $page.props.flash.message}
-        <Alert>{@html $page.props.flash.message}</Alert>
-    {/if}
+	{#if $page.props.flash.message}
+		<Alert>{@html $page.props.flash.message}</Alert>
+	{/if}
 
-    {@render children()}
+	{@render children()}
 </main>
