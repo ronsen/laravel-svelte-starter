@@ -26,11 +26,10 @@ Migrate database:
 php artisan migrate --seed
 ```
 
-To try this app, run these commands on seperate terminal:
+To try this app, run these command:
 
 ```
-npm run dev
-php artisan serve
+composer run dev
 ```
 
 ### Deployment
