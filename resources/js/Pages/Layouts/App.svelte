@@ -1,23 +1,8 @@
 <script>
 	import { page, Link, inertia } from "@inertiajs/svelte";
-	import { CirclePlus, LogIn, LogOut, SunMoon } from "lucide-svelte";
+	import { CirclePlus, LogIn, LogOut } from "lucide-svelte";
 	import Alert from "../Components/Alert.svelte";
-
-	function toggleMode() {
-		const theme = localStorage.getItem("theme") ?? "light";
-
-		if (theme == "light") {
-			document.documentElement.classList.remove("light");
-			document.documentElement.classList.add("dark");
-
-			localStorage.setItem("theme", "dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-			document.documentElement.classList.add("light");
-
-			localStorage.setItem("theme", "light");
-		}
-	}
+	import Theme from "../Components/Theme.svelte";
 
 	let { children } = $props();
 </script>
@@ -31,10 +16,8 @@
 		</h1>
 
 		<div class="inline-flex gap-3">
-			<button onclick={toggleMode} class="cursor-pointer"
-				><SunMoon size={16} /></button
-			>
-
+			<Theme />
+			
 			{#if $page.props.auth.user}
 				<Link href="/posts/create"><CirclePlus size={16} /></Link>
 				<button use:inertia={{ href: "/logout", method: "post" }}
