@@ -41,7 +41,7 @@ Build the app:
 npm run buid
 ```
 
-Sign in with email `admin@example.com` and password `password`.
+Sign in with email `test@example.com` and password `password`.
 
 ### Docker
 

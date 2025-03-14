@@ -1,9 +1,13 @@
 @import "tailwindcss";
-@source "../";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.svelte";
 
 @plugin '@tailwindcss/forms';
 
 @theme {
-	--font-sans: Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    --font-sans: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
