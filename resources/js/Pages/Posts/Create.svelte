@@ -44,7 +44,7 @@
 	</div>
 	<button
 		type="submit"
-		class="p-2 border border-zinc-500 rounded-lg text-sm"
+		class="p-2 border border-zinc-500 rounded-lg text-sm cursor-pointer"
 		disabled={$form.processing}>Save</button
 	>
 </form>

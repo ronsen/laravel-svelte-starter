@@ -38,12 +38,12 @@
 		<div class="flex justify-end gap-3 p-3 bg-zinc-100 dark:bg-zinc-800">
 			<div class="flex justify-between gap-4">
 				<button
-					class="p-2 border border-zinc-500 rounded-lg text-sm"
+					class="p-2 border border-zinc-500 rounded-lg text-sm cursor-pointer"
 					onclick={close}>No</button
 				>
 				<button
 					type="submit"
-					class="p-2 border border-red-500 bg-red-500 rounded-lg text-sm"
+					class="p-2 border border-red-500 bg-red-500 rounded-lg text-sm cursor-pointer"
 					>Yes</button
 				>
 			</div>

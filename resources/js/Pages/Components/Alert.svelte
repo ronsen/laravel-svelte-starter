@@ -22,6 +22,6 @@
 			</div>
 		</div>
 		<span></span>
-		<button onclick={close}><X size={16} /></button>
+		<button onclick={close} class="cursor-pointer"><X size={16} /></button>
 	</div>
 {/if}

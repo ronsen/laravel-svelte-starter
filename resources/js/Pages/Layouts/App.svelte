@@ -17,11 +17,12 @@
 
 		<div class="inline-flex gap-3">
 			<Theme />
-			
+
 			{#if $page.props.auth.user}
 				<Link href="/posts/create"><CirclePlus size={16} /></Link>
-				<button use:inertia={{ href: "/logout", method: "post" }}
-					><LogOut size={16} /></button
+				<button
+					use:inertia={{ href: "/logout", method: "post" }}
+					class="cursor-pointer"><LogOut size={16} /></button
 				>
 			{/if}
 
