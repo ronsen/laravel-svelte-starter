@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@inertiajs/svelte": "^2.0.0",
-    "lucide-svelte": "^0.476.0"
+    "lucide-svelte": "^0.511.0"
   }
 }
