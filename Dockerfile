@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 
-ARG DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update
 
@@ -33,7 +33,8 @@ RUN apt install -y php-cli \
 	php-imagick \
 	php-xdebug
 
-RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
 RUN apt update && apt install -y nodejs
 
 RUN apt clean && rm -rf /var/lib/apt/lists/*
