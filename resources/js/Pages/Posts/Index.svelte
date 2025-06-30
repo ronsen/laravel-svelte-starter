@@ -4,7 +4,7 @@
 
 <script>
 	import { page, Link } from "@inertiajs/svelte";
-	import { Pencil } from "lucide-svelte";
+	import { Pencil } from "@lucide/svelte";
 	import Alert from "../Components/Alert.svelte";
 	import Delete from "../Components/Delete.svelte";
 	import Pagination from "../Components/Pagination.svelte";

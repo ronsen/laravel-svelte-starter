@@ -1,6 +1,6 @@
 <script>
 	import { router } from "@inertiajs/svelte";
-	import { Trash } from "lucide-svelte";
+	import { Trash } from "@lucide/svelte";
 
 	let { post } = $props();
 

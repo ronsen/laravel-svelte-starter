@@ -1,5 +1,5 @@
 <script>
-	import { CircleAlert, X } from "lucide-svelte";
+	import { CircleAlert, X } from "@lucide/svelte";
 
 	let { children } = $props();
 

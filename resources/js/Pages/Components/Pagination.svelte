@@ -1,6 +1,6 @@
 <script>
 	import { Link } from "@inertiajs/svelte";
-	import { MoveLeft, MoveRight } from "lucide-svelte";
+	import { MoveLeft, MoveRight } from "@lucide/svelte";
 
 	let { data } = $props();
 </script>

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import { SunMoon } from "lucide-svelte";
+	import { SunMoon } from "@lucide/svelte";
 
 	onMount(() => {
 		document.documentElement.classList.toggle(

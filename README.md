@@ -41,13 +41,3 @@ npm run buid
 ```
 
 Sign in with email `test@example.com` and password `password`.
-
-### Docker
-
-Installation using Docker:
-
-```
-docker build -t laravel-svelte-starter .
-docker run -p 8000:8000 -d laravel-svelte-starter
-```
-Open `http://localhost:8000/` on your browser.
