@@ -1,43 +1,34 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
 WORKDIR /var/www/html
 
-ARG DEBIAN_FRONTEND=noninteractive
+RUN echo "UTC" > /etc/timezone
+RUN apk add --no-cache zip unzip curl sqlite nginx supervisor
 
-RUN apt update
+RUN apk add --no-cache php \
+    php-common \
+    php-fpm \
+    php-pdo \
+    php-opcache \
+    php-zip \
+    php-phar \
+    php-iconv \
+    php-cli \
+    php-curl \
+    php-openssl \
+    php-mbstring \
+    php-tokenizer \
+    php-fileinfo \
+    php-json \
+    php-xml \
+    php-xmlwriter \
+    php-simplexml \
+    php-dom \
+    php-pdo_sqlite \
+    php-tokenizer \
+    php-pecl-redis
 
-RUN apt install -y software-properties-common \
-	curl \
-	zip \
-	unzip
-
-RUN apt install -y php-cli \
-	php-fpm \
-	php-sqlite3 \
-	php-gd \
-	php-curl \
-	php-imap \
-	php-mbstring \
-	php-xml \
-	php-zip \
-	php-bcmath \
-	php-soap \
-	php-intl \
-	php-readline \
-	php-ldap \
-	php-msgpack \
-	php-igbinary \
-	php-redis \
-	php-memcached \
-	php-pcov \
-	php-imagick \
-	php-xdebug
-
-RUN curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
-RUN bash nodesource_setup.sh
-RUN apt update && apt install -y nodejs
-
-RUN apt clean && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache nodejs npm
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
@@ -48,6 +39,7 @@ RUN composer install --optimize-autoloader
 
 RUN php artisan key:generate
 RUN php artisan migrate --seed --force
+RUN php artisan storage:link
 
 RUN npm install
 RUN npm run build
