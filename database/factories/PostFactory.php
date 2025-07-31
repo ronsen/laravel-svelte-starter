@@ -16,13 +16,13 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $content = fake()->text(500) . "\n\n" . 
-            fake()->text(500) . "\n\n" .
+        $content = fake()->text(500)."\n\n".
+            fake()->text(500)."\n\n".
             fake()->text(500);
-            
+
         return [
             'title' => fake()->sentence(),
-            'content' => $content
+            'content' => $content,
         ];
     }
 }

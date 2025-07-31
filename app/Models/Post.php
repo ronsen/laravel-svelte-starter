@@ -8,22 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-	/** @use HasFactory<\Database\Factories\PostFactory> */
-	use HasFactory;
+    /** @use HasFactory<\Database\Factories\PostFactory> */
+    use HasFactory;
 
-	protected $fillable = [
-		'title',
-		'content',
-	];
+    protected $fillable = [
+        'title',
+        'content',
+    ];
 
-	protected $appends = [
-		'content_to_html',
-	];
+    protected $appends = [
+        'content_to_html',
+    ];
 
-	public function contentToHtml(): Attribute
-	{
-		return new Attribute(
-			get: fn() => nl2br($this->content)
-		);
-	}
+    public function contentToHtml(): Attribute
+    {
+        return new Attribute(
+            get: fn () => nl2br($this->content)
+        );
+    }
 }
