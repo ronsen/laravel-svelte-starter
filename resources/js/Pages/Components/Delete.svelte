@@ -1,21 +1,21 @@
-<script>
+<script lang="ts">
 	import { router } from "@inertiajs/svelte";
 	import { Trash } from "@lucide/svelte";
 
 	let { post } = $props();
 
-	let dialog;
+	let dialog: HTMLDialogElement;
 
 	function destroy() {
 		dialog.showModal();
 	}
 
-	function close(e) {
+	function close(e: MouseEvent) {
 		e.preventDefault();
 		dialog.close();
 	}
 
-	function submit(e) {
+	function submit(e: SubmitEvent) {
 		e.preventDefault();
 		router.delete(`/posts/${post.id}`);
 		dialog.close();

@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	import { CircleAlert, X } from "@lucide/svelte";
+	import type { Snippet } from "svelte";
 
-	let { children } = $props();
+	let { children }: { children: Snippet } = $props();
 
 	let show = $state(true);
 
-	function close(e) {
-		e.preventDefault();
+	function close() {
 		show = !show;
 	}
 </script>

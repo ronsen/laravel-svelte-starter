@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Link } from "@inertiajs/svelte";
 	import { MoveLeft, MoveRight } from "@lucide/svelte";
 
