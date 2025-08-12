@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { useForm } from "@inertiajs/svelte";
 	import App from "../Layouts/App.svelte";
+	import type { Post } from "../types";
 
-	let { post } = $props();
+	interface Props {
+		post: Post;
+	}
+
+	let { post }: Props = $props();
 
 	let form = useForm({
 		title: post.title,

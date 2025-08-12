@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { router } from "@inertiajs/svelte";
 	import { Trash } from "@lucide/svelte";
+	import type { Post } from "../types";
 
-	let { post } = $props();
+	interface Props {
+		post: Post;
+	}
+
+	let { post }: Props = $props();
 
 	let dialog: HTMLDialogElement;
 

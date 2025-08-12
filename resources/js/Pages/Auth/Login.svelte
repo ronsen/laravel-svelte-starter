@@ -10,7 +10,7 @@
 	function submit(e: SubmitEvent) {
 		e.preventDefault();
 		$form.post("/login", {
-			onSuccess: () => $form.reset("password"),
+			onFinish: () => $form.reset("password"),
 		});
 	}
 </script>

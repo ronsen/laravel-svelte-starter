@@ -1,12 +1,21 @@
-<script>
+<script lang="ts">
 	import { page, Link } from "@inertiajs/svelte";
 	import { Pencil } from "@lucide/svelte";
 	import App from "../Layouts/App.svelte";
 	import Alert from "../Components/Alert.svelte";
 	import Delete from "../Components/Delete.svelte";
 	import Pagination from "../Components/Pagination.svelte";
+	import type { Post } from "../types";
 
-	let { posts } = $props();
+	interface Props {
+		posts: {
+			data: Post[];
+			prev_page_url: string;
+			next_page_url: string;
+		};
+	}
+
+	let { posts }: Props = $props();
 </script>
 
 <svelte:head>

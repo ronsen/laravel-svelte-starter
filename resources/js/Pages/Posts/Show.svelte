@@ -3,8 +3,13 @@
 	import { Pencil } from "@lucide/svelte";
 	import Delete from "../Components/Delete.svelte";
 	import App from "../Layouts/App.svelte";
+	import type { Post } from "../types";
 
-	let { post } = $props();
+	interface Props {
+		post: Post;
+	}
+
+	let { post }: Props = $props();
 </script>
 
 <svelte:head>
