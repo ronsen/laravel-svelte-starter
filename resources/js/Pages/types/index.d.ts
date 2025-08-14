@@ -14,3 +14,13 @@ export type User = {
 	created_at: Date;
 	updated_at: Date;
 }
+
+export type Auth = {
+	user: User;
+}
+
+export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
+	name: string;
+	auth: Auth;
+	flash: string;
+};
