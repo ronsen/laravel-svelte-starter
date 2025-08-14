@@ -1,6 +1,6 @@
 <script lang="ts">
     import { useForm } from "@inertiajs/svelte";
-    import App from "../layouts/App.svelte";
+    import App from "@/layouts/App.svelte";
 
     let form = useForm({
         title: null,

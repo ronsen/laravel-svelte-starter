@@ -2,8 +2,8 @@
     import { page, Link, inertia } from "@inertiajs/svelte";
     import { CirclePlus, LogIn, LogOut } from "@lucide/svelte";
     import type { Snippet } from "svelte";
-    import Alert from "../components/Alert.svelte";
-    import Theme from "../components/Theme.svelte";
+    import Alert from "@/components/Alert.svelte";
+    import Theme from "@/components/Theme.svelte";
 
     let { children }: { children: Snippet } = $props();
 </script>

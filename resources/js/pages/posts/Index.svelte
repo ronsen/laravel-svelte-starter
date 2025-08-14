@@ -1,11 +1,11 @@
 <script lang="ts">
     import { page, Link } from "@inertiajs/svelte";
     import { Pencil } from "@lucide/svelte";
-    import App from "../layouts/App.svelte";
-    import Alert from "../components/Alert.svelte";
-    import Delete from "../components/Delete.svelte";
-    import Pagination from "../components/Pagination.svelte";
-    import type { Post } from "../types";
+    import type { Post } from "@/types";
+    import App from "@/layouts/App.svelte";
+    import Alert from "@/components/Alert.svelte";
+    import Delete from "@/components/Delete.svelte";
+    import Pagination from "@/components/Pagination.svelte";
 
     interface Props {
         posts: {

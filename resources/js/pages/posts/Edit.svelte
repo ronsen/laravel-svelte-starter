@@ -1,7 +1,7 @@
 <script lang="ts">
     import { useForm } from "@inertiajs/svelte";
-    import App from "../layouts/App.svelte";
-    import type { Post } from "../types";
+    import type { Post } from "@/types";
+    import App from "@/layouts/App.svelte";
 
     interface Props {
         post: Post;

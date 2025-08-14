@@ -1,7 +1,7 @@
 <script lang="ts">
     import { router } from "@inertiajs/svelte";
     import { Trash } from "@lucide/svelte";
-    import type { Post } from "../types";
+    import type { Post } from "@/types";
 
     interface Props {
         post: Post;
