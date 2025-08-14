@@ -13,7 +13,7 @@
 		class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-8"
 	>
 		<h1 class="font-bold">
-			<Link href="/">{$page.props.appName}</Link>
+			<Link href="/">{$page.props.name}</Link>
 		</h1>
 
 		<div class="inline-flex gap-3">
