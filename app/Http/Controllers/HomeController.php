@@ -14,6 +14,6 @@ class HomeController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->simplePaginate(self::PER_PAGE);
 
-        return Inertia::render('Posts/Index', ['posts' => $posts]);
+        return Inertia::render('posts/Index', ['posts' => $posts]);
     }
 }

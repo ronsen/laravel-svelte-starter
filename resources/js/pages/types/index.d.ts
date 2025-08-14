@@ -3,16 +3,17 @@ export type Post = {
 	title: string;
 	content: string;
 	content_to_html: string;
-	created_at: Date;
-	updated_at: Date;
+	created_at: string;
+	updated_at: string;
 };
 
 export type User = {
 	id: number;
 	name: string;
 	email: string;
-	created_at: Date;
-	updated_at: Date;
+	email_verified_at: string | null;
+	created_at: string;
+	updated_at: string;
 }
 
 export type Auth = {

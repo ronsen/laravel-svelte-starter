@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page, Link } from "@inertiajs/svelte";
 	import { Pencil } from "@lucide/svelte";
-	import Delete from "../Components/Delete.svelte";
-	import App from "../Layouts/App.svelte";
+	import Delete from "../components/Delete.svelte";
+	import App from "../layouts/App.svelte";
 	import type { Post } from "../types";
 
 	interface Props {

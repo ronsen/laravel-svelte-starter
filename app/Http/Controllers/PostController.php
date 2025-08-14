@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function create(): Response
     {
-        return Inertia::render('Posts/Create');
+        return Inertia::render('posts/Create');
     }
 
     public function store(Request $request): RedirectResponse
@@ -28,7 +28,7 @@ class PostController extends Controller
 
     public function edit(Post $post): Response
     {
-        return Inertia::render('Posts/Edit', ['post' => $post]);
+        return Inertia::render('posts/Edit', ['post' => $post]);
     }
 
     public function update(Post $post, Request $request): RedirectResponse
@@ -44,7 +44,7 @@ class PostController extends Controller
 
     public function show(Post $post): Response
     {
-        return Inertia::render('Posts/Show', ['post' => $post]);
+        return Inertia::render('posts/Show', ['post' => $post]);
     }
 
     public function destroy(Post $post): RedirectResponse
