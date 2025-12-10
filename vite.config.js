@@ -13,6 +13,11 @@ export default defineConfig({
         tailwindcss(),
         svelte(),
     ],
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
+    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './resources/js'),
