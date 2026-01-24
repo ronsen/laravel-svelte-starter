@@ -10,4 +10,6 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+@plugin '@tailwindcss/forms';
+
 @custom-variant dark (&:where(.dark, .dark *));

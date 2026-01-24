@@ -1,13 +1,9 @@
 <script lang="ts">
-    import { router } from "@inertiajs/svelte";
+    import { Form, router } from "@inertiajs/svelte";
     import { Trash } from "@lucide/svelte";
     import type { Post } from "@/types";
 
-    interface Props {
-        post: Post;
-    }
-
-    let { post }: Props = $props();
+    let { post }: { post: Post } = $props();
 
     let dialog: HTMLDialogElement;
 
@@ -17,12 +13,6 @@
 
     function close(e: MouseEvent) {
         e.preventDefault();
-        dialog.close();
-    }
-
-    function submit(e: SubmitEvent) {
-        e.preventDefault();
-        router.delete(`/posts/${post.id}`);
         dialog.close();
     }
 </script>
@@ -35,7 +25,7 @@
     bind:this={dialog}
     class="w-full mx-auto my-auto -translate-x-0.5 md:w-1/3 border border-zinc-100 dark:border-zinc-600 rounded-lg shadow dark:bg-zinc-900 dark:text-white/90 bg-zinc-50 backdrop:backdrop-blur"
 >
-    <form onsubmit={submit}>
+    <Form action="/posts/{post.id}" method="delete" disableWhileProcessing>
         <div class="p-6">
             <p>Delete this post?</p>
         </div>
@@ -53,5 +43,5 @@
                 >
             </div>
         </div>
-    </form>
+    </Form>
 </dialog>

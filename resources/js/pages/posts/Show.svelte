@@ -5,11 +5,7 @@
     import Delete from "@/components/Delete.svelte";
     import App from "@/layouts/App.svelte";
 
-    interface Props {
-        post: Post;
-    }
-
-    let { post }: Props = $props();
+    let { post }: { post: Post } = $props();
 </script>
 
 <svelte:head>
