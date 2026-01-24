@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Form, router } from "@inertiajs/svelte";
+    import { Form } from "@inertiajs/svelte";
     import { Trash } from "@lucide/svelte";
     import type { Post } from "@/types";
 

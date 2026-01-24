@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { SunMoon } from "@lucide/svelte";
+    import { Moon } from "@lucide/svelte";
 
     onMount(() => {
         document.documentElement.classList.toggle(
@@ -23,5 +23,5 @@
 </script>
 
 <button onclick={toggleMode} class="cursor-pointer"
-    ><SunMoon size={16} /></button
+    ><Moon size={16} /></button
 >

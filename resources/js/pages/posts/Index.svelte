@@ -1,10 +1,8 @@
 <script lang="ts">
     import { page, Link } from "@inertiajs/svelte";
-    import { Pencil } from "@lucide/svelte";
     import type { Post } from "@/types";
     import App from "@/layouts/App.svelte";
     import Alert from "@/components/Alert.svelte";
-    import Delete from "@/components/Delete.svelte";
     import Pagination from "@/components/Pagination.svelte";
 
     interface Props {
@@ -28,20 +26,9 @@
     {:else}
         {#each posts.data as post}
             <div
-                class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-2"
+                class="border-b dark:border-zinc-700 pb-2 mb-2"
             >
-                <div class="note-title">
-                    <Link href="/posts/{post.id}">{post.title}</Link>
-                </div>
-
-                {#if $page.props.auth}
-                    <div class="inline-flex items-center gap-3">
-                        <Link href="/posts/{post.id}/edit" title="Edit Post"
-                            ><Pencil size={16} /></Link
-                        >
-                        <Delete {post} />
-                    </div>
-                {/if}
+                <Link href="/posts/{post.id}">{post.title}</Link>
             </div>
         {/each}
 
