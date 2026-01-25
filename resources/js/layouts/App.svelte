@@ -19,7 +19,7 @@
         <div class="inline-flex gap-3">
             <Theme />
 
-            {#if $page.props.auth}
+            {#if $page.props.auth.user}
                 <Link href="/posts/create"><CirclePlus size={16} /></Link>
                 <button
                     use:inertia={{ href: "/logout", method: "post" }}
@@ -27,7 +27,7 @@
                 >
             {/if}
 
-            {#if !$page.props.auth}
+            {#if !$page.props.auth.user}
                 <Link href="/login"><LogIn size={16} /></Link>
             {/if}
         </div>
