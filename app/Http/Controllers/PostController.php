@@ -39,9 +39,7 @@ class PostController extends Controller
     {
         $request->validate(['title' => ['required']]);
 
-        $post->title = $request->input('title');
-        $post->content = $request->input('content');
-        $post->update();
+        $post->update($request->only(['title', 'content']));
 
         return back()->with('message', "<strong>{$post->title}</strong> has been updated.");
     }
@@ -53,10 +51,9 @@ class PostController extends Controller
 
     public function destroy(Post $post): RedirectResponse
     {
-        Session::flash('message', "<strong>{$post->title}</strong> has been deleted.");
-
+        $title = $post->title;
         $post->delete();
 
-        return to_route('home');
+        return to_route('home')->with('message', "<strong>{$title}</strong> has been deleted.");
     }
 }
