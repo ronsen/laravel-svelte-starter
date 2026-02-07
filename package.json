@@ -4,6 +4,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
+        "ssr": "vite build && vite build --ssr",
         "dev": "vite"
     },
     "devDependencies": {
