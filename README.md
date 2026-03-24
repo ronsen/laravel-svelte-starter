@@ -1,4 +1,4 @@
-## laravel-svelte-starter
+### laravel-svelte-starter
 
 Starter template using Laravel and Svelte.
 
