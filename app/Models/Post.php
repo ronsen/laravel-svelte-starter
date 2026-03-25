@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\Appends;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 #[UseFactory(PostFactory::class)]
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
 #[Appends(['content_to_html'])]
 class Post extends Model
 {
+    use HasFactory;
+
     public function contentToHtml(): Attribute
     {
         return new Attribute(
