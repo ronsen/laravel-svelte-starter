@@ -3,9 +3,9 @@
 Starter template using Laravel and Svelte.
 
 This starter template includes:
-- Laravel 12
+- Laravel 13
 - Svelte 5
-- Inertia 2
+- Inertia 3
 - Tailwind CSS
 - sqlite
 

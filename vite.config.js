@@ -1,8 +1,9 @@
+import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import tailwindcss from '@tailwindcss/vite';
+import inertia from '@inertiajs/vite';
 import laravel from 'laravel-vite-plugin';
 import path from 'path';
-import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
     plugins: [
@@ -13,6 +14,7 @@ export default defineConfig({
         }),
         tailwindcss(),
         svelte(),
+        inertia(),
     ],
     server: {
         watch: {

@@ -9,10 +9,7 @@
 
 <App>
     <Form action="/login" method="post">
-        {#snippet children(
-            { errors }: { errors: Record<string, string> },
-            processing: boolean,
-        )}
+        {#snippet children({ errors, processing })}
             <div class="mb-3">
                 <input
                     type="email"
@@ -42,7 +39,7 @@
             <button
                 type="submit"
                 class="p-2 border border-zinc-500 rounded-lg text-sm cursor-pointer w-full"
-                >Log In</button
+                disabled={processing}>Log In</button
             >
         {/snippet}
     </Form>

@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-    <title>{$page.props.name}</title>
+    <title>{page.props.name}</title>
 </svelte:head>
 
 <App>
