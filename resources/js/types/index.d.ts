@@ -5,6 +5,10 @@ export type Post = {
     content_to_html: string;
     created_at: string;
     updated_at: string;
+    create_url?: string;
+    show_url?: string;
+    edit_url?: string;
+    delete_url?: string;
 };
 
 export type User = {

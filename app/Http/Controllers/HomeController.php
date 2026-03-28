@@ -12,7 +12,14 @@ class HomeController extends Controller
 
     public function index(): Response
     {
-        $posts = Post::orderBy('id', 'desc')->simplePaginate(self::PER_PAGE);
+        $posts = Post::query()
+            ->latest('id')
+            ->simplePaginate(self::PER_PAGE)
+            ->through(fn ($post) => [
+                ...$post->toArray(),
+                'show_url' => route('posts.show', $post),
+                'edit_url' => route('posts.edit', $post),
+            ]);
 
         return Inertia::render('posts/Index', ['posts' => $posts]);
     }

@@ -11,7 +11,7 @@
 </svelte:head>
 
 <App>
-    <Form action="/posts/{post.id}" method="patch" disableWhileProcessing>
+    <Form action={post.show_url} method="patch" disableWhileProcessing>
         {#snippet children({ errors, processing })}
             <div class="mb-3">
                 <input

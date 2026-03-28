@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -32,7 +31,12 @@ class PostController extends Controller
 
     public function edit(Post $post): Response
     {
-        return Inertia::render('posts/Edit', ['post' => $post]);
+        return Inertia::render('posts/Edit', [
+            'post' => [
+                ...$post->toArray(),
+                'show_url' => route('posts.show', $post),
+            ],
+        ]);
     }
 
     public function update(Post $post, Request $request): RedirectResponse
@@ -46,7 +50,14 @@ class PostController extends Controller
 
     public function show(Post $post): Response
     {
-        return Inertia::render('posts/Show', ['post' => $post]);
+        return Inertia::render('posts/Show', [
+            'post' => [
+                ...$post->toArray(),
+                'show_url' => route('posts.show', $post),
+                'edit_url' => route('posts.edit', $post),
+                'delete_url' => route('posts.destroy', $post),
+            ],
+        ]);
     }
 
     public function destroy(Post $post): RedirectResponse

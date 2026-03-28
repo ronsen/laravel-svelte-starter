@@ -28,7 +28,7 @@
             <div
                 class="border-b dark:border-zinc-700 pb-2 mb-2"
             >
-                <Link href="/posts/{post.id}">{post.title}</Link>
+                <Link href={post.show_url}>{post.title}</Link>
             </div>
         {/each}
 

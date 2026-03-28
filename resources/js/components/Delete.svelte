@@ -25,7 +25,7 @@
     bind:this={dialog}
     class="w-full mx-auto my-auto -translate-x-0.5 md:w-1/3 border border-zinc-100 dark:border-zinc-600 rounded-lg shadow dark:bg-zinc-900 dark:text-white/90 bg-zinc-50 backdrop:backdrop-blur"
 >
-    <Form action="/posts/{post.id}" method="delete" disableWhileProcessing>
+    <Form action={post.delete_url} method="delete" disableWhileProcessing>
         <div class="p-6">
             <p>Delete this post?</p>
         </div>

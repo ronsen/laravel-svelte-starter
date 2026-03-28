@@ -19,7 +19,7 @@
 
             {#if page.props.auth}
                 <div class="inline-flex items-center gap-3">
-                    <Link href="/posts/{post.id}/edit" title="Edit Post"
+                    <Link href={post.edit_url} title="Edit Post"
                         ><Pencil size={16} /></Link
                     >
                     <Delete {post} />
