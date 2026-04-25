@@ -17,7 +17,7 @@
         <div class="flex justify-between items-center border-b pb-3 mb-3">
             <div class="title font-bold">{post.title}</div>
 
-            {#if page.props.auth}
+            {#if page.props.auth.user}
                 <div class="inline-flex items-center gap-3">
                     <Link href={post.edit_url} title="Edit Post"
                         ><Pencil size={16} /></Link
