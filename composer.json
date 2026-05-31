@@ -3,10 +3,7 @@
     "name": "ronsen/laravel-svelte-starter",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": [
-        "laravel",
-        "framework"
-    ],
+    "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.3",
@@ -17,6 +14,7 @@
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.5",
+        "laravel/pao": "^1.0.6",
         "laravel/pint": "^1.27",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
@@ -40,7 +38,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "@php artisan migrate --force",
-            "npm install",
+            "npm install --ignore-scripts",
             "npm run build"
         ],
         "dev": [
@@ -48,7 +46,7 @@
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
         "test": [
-            "@php artisan config:clear --ansi",
+            "@php artisan config:clear --ansi @no_additional_args",
             "@php artisan test"
         ],
         "post-autoload-dump": [
