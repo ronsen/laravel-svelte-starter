@@ -1,9 +1,9 @@
 <script lang="ts">
     import { page, Link, inertia } from "@inertiajs/svelte";
-    import { CirclePlus, LogIn, LogOut } from "@lucide/svelte";
+    import { CircleAlert, CirclePlus, LogIn, LogOut } from "@lucide/svelte";
     import type { Snippet } from "svelte";
-    import Alert from "@/components/Alert.svelte";
     import Theme from "@/components/Theme.svelte";
+    import * as Alert from "@/components/ui/alert";
 
     let { children }: { children: Snippet } = $props();
 </script>
@@ -34,7 +34,14 @@
     </nav>
 
     {#if page.props.flash}
-        <Alert>{@html page.props.flash}</Alert>
+        <div class="grid w-full items-start gap-4 mb-4">
+            <Alert.Root>
+                <CircleAlert />
+                <Alert.Description>
+                    {@html page.props.flash}
+                </Alert.Description>
+            </Alert.Root>
+        </div>
     {/if}
 
     {@render children()}

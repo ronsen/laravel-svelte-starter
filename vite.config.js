@@ -15,11 +15,6 @@ export default defineConfig({
         svelte(),
         inertia(),
     ],
-    server: {
-        watch: {
-            ignored: ['**/storage/framework/views/**'],
-        },
-    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './resources/js'),

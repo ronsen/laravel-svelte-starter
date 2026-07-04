@@ -1,6 +1,9 @@
 <script lang="ts">
     import { Form } from "@inertiajs/svelte";
     import App from "@/layouts/App.svelte";
+    import { Input } from "@/components/ui/input";
+    import { Textarea } from "@/components/ui/textarea";
+    import { Button } from "@/components/ui/button";
 </script>
 
 <svelte:head>
@@ -11,12 +14,7 @@
     <Form action="/posts" method="post" disableWhileProcessing>
         {#snippet children({ errors, processing })}
             <div class="mb-3">
-                <input
-                    type="text"
-                    name="title"
-                    placeholder="Title"
-                    class="rounded-lg dark:bg-zinc-800 w-full"
-                />
+                <Input type="text" name="title" placeholder="Title" />
                 {#if errors.title}
                     <div class="text-red-500 text-sm mt-1">
                         {errors.title}
@@ -24,17 +22,15 @@
                 {/if}
             </div>
             <div class="mb-3">
-                <textarea
+                <Textarea
                     name="content"
                     rows="5"
                     placeholder="Content"
                     class="rounded-lg dark:bg-zinc-800 w-full"
-                ></textarea>
+                />
             </div>
-            <button
-                type="submit"
-                class="p-2 border border-zinc-500 rounded-lg text-sm cursor-pointer w-full"
-                disabled={processing}>Save</button
+            <Button type="submit" class="w-full" disabled={processing}
+                >Save</Button
             >
         {/snippet}
     </Form>

@@ -23,8 +23,8 @@ Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout');
 
-Route::get('/posts/{post}', [\App\Http\Controllers\PostController::class, 'show'])
-    ->name('posts.show');
 Route::resource('/posts', \App\Http\Controllers\PostController::class)
     ->middleware('auth')
     ->except('show');
+Route::get('/posts/{post}', [\App\Http\Controllers\PostController::class, 'show'])
+    ->name('posts.show');

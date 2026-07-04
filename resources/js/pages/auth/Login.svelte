@@ -1,6 +1,8 @@
 <script lang="ts">
     import { Form } from "@inertiajs/svelte";
     import App from "@/layouts/App.svelte";
+    import { Input } from "@/components/ui/input";
+    import { Button } from "@/components/ui/button";
 </script>
 
 <svelte:head>
@@ -11,12 +13,7 @@
     <Form action="/login" method="post">
         {#snippet children({ errors, processing })}
             <div class="mb-3">
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                    class="rounded-lg dark:bg-zinc-800 w-full"
-                />
+                <Input type="email" name="email" placeholder="E-mail" />
                 {#if errors.email}
                     <div class="text-red-500 text-sm mt-1">
                         {errors.email}
@@ -24,23 +21,14 @@
                 {/if}
             </div>
             <div class="mb-3">
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    class="rounded-lg dark:bg-zinc-800 w-full"
-                />
+                <Input type="password" name="password" placeholder="Password" />
                 {#if errors.password}
                     <div class="text-red-500 text-sm mt-1">
                         {errors.password}
                     </div>
                 {/if}
             </div>
-            <button
-                type="submit"
-                class="p-2 border border-zinc-500 rounded-lg text-sm cursor-pointer w-full"
-                disabled={processing}>Log In</button
-            >
+            <Button type="submit" class="w-full" disabled={processing}>Log In</Button>
         {/snippet}
     </Form>
 </App>

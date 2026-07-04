@@ -2,8 +2,8 @@
     import { page, Link } from "@inertiajs/svelte";
     import type { Post } from "@/types";
     import App from "@/layouts/App.svelte";
-    import Alert from "@/components/Alert.svelte";
     import Pagination from "@/components/Pagination.svelte";
+    import { Alert } from "@/components/ui/alert";
 
     interface Props {
         posts: {
@@ -25,9 +25,7 @@
         <Alert>Empty.</Alert>
     {:else}
         {#each posts.data as post}
-            <div
-                class="border-b dark:border-zinc-700 pb-2 mb-2"
-            >
+            <div class="border-b dark:border-zinc-700 pb-2 mb-2">
                 <Link href={post.show_url}>{post.title}</Link>
             </div>
         {/each}

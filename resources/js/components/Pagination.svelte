@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Link } from "@inertiajs/svelte";
     import { MoveLeft, MoveRight } from "@lucide/svelte";
+    import { Button, buttonVariants } from "@/components/ui/button";
 
     interface Props {
         data: {
@@ -15,15 +16,23 @@
 <div class="text-center mt-6">
     <div class="flex justify-between items-center gap-4">
         {#if data.prev_page_url}
-            <Link href={data.prev_page_url}><MoveLeft size={16} /></Link>
+            <Link
+                href={data.prev_page_url}
+                class={buttonVariants({ variant: "outline" })}
+                ><MoveLeft size={16} /></Link
+            >
         {:else}
-            <button class="cursor-default" disabled><MoveLeft size={16} /></button>
+            <Button disabled><MoveLeft size={16} /></Button>
         {/if}
 
         {#if data.next_page_url}
-            <Link href={data.next_page_url}><MoveRight size={16} /></Link>
+            <Link
+                href={data.next_page_url}
+                class={buttonVariants({ variant: "outline" })}
+                ><MoveRight size={16} /></Link
+            >
         {:else}
-            <button class="cursor-default" disabled><MoveRight size={16} /></button>
+            <Button disabled><MoveRight size={16} /></Button>
         {/if}
     </div>
 </div>
