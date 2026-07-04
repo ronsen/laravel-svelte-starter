@@ -9,11 +9,11 @@
     "devDependencies": {
         "@inertiajs/svelte": "^3.0.0",
         "@inertiajs/vite": "^3.0.0",
-        "@lucide/svelte": "^1.0.1",
+        "@lucide/svelte": "^1.0.0",
         "@sveltejs/vite-plugin-svelte": "^7.0.0",
         "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/vite": "^4.0.0",
-        "concurrently": "^9.0.1",
+        "concurrently": "^10.0.0",
         "laravel-vite-plugin": "^3.0.0",
         "svelte": "^5.2.3",
         "tailwindcss": "^4.0.0",
