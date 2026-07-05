@@ -4,19 +4,22 @@
     import type { Snippet } from "svelte";
     import Theme from "@/components/Theme.svelte";
     import * as Alert from "@/components/ui/alert";
+    import { ModeWatcher } from "mode-watcher";
 
     let { children }: { children: Snippet } = $props();
 </script>
 
+<ModeWatcher />
+
 <main class="mx-auto max-w-2xl my-6 px-6 md:my-12">
     <nav
-        class="flex justify-between items-center border-b dark:border-zinc-700 pb-2 mb-8"
+        class="flex justify-between items-center border-b pb-2 mb-8"
     >
         <h1 class="font-bold">
             <Link href="/">{page.props.name}</Link>
         </h1>
 
-        <div class="inline-flex gap-3">
+        <div class="inline-flex items-center gap-3">
             <Theme />
 
             {#if page.props.auth.user}

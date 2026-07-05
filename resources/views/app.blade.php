@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -10,7 +10,7 @@
 	</x-inertia::head>
 </head>
 
-<body class="bg-zinc-50 font-sans text-black/90 antialiased dark:bg-zinc-900 dark:text-white/90">
+<body class="font-sans antialiased">
 	<x-inertia::app />
 </body>
 
