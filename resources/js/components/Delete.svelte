@@ -13,8 +13,12 @@
     <Dialog.Content>
         <Dialog.Header>
             <Dialog.Title>Delete</Dialog.Title>
+            <Dialog.Description
+                ><p>
+                    Are you sure want to delete this post?
+                </p></Dialog.Description
+            >
         </Dialog.Header>
-        <p>Are you sure want to delete this post?</p>
         <Dialog.Footer>
             <Form
                 method="DELETE"
