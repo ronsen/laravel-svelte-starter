@@ -8,7 +8,7 @@ use Inertia\Response;
 
 class HomeController extends Controller
 {
-    const PER_PAGE = 10;
+    private const int PER_PAGE = 10;
 
     public function index(): Response
     {

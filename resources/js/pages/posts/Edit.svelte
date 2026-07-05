@@ -32,7 +32,7 @@
             <div class="mb-3">
                 <Textarea
                     name="content"
-                    rows="10"
+                    rows={10}
                     placeholder="Content"
                     value={post.content}
                 />

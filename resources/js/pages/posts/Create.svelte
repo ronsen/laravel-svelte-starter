@@ -24,7 +24,7 @@
             <div class="mb-3">
                 <Textarea
                     name="content"
-                    rows="5"
+                    rows={5}
                     placeholder="Content"
                     class="rounded-lg dark:bg-zinc-800 w-full"
                 />
