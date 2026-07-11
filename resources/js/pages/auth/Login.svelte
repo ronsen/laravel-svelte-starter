@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Form } from "@inertiajs/svelte";
     import App from "@/layouts/App.svelte";
+    import * as Field from "@/components/ui/field";
     import { Input } from "@/components/ui/input";
     import { Button } from "@/components/ui/button";
 </script>
@@ -10,25 +11,33 @@
 </svelte:head>
 
 <App>
-    <Form action="/login" method="post">
+    <Form action="/login" method="post" disableWhileProcessing>
         {#snippet children({ errors, processing })}
-            <div class="mb-3">
-                <Input type="email" name="email" placeholder="E-mail" />
-                {#if errors.email}
-                    <div class="text-red-500 text-sm mt-1">
-                        {errors.email}
-                    </div>
-                {/if}
-            </div>
-            <div class="mb-3">
-                <Input type="password" name="password" placeholder="Password" />
-                {#if errors.password}
-                    <div class="text-red-500 text-sm mt-1">
-                        {errors.password}
-                    </div>
-                {/if}
-            </div>
-            <Button type="submit" class="w-full" disabled={processing}>Log In</Button>
+            <Field.Group>
+                <Field.Set>
+                    <Field.Field>
+                        <Input type="email" name="email" placeholder="E-mail" />
+                        {#if errors.email}
+                            <Field.Error>
+                                {errors.email}
+                            </Field.Error>
+                        {/if}
+                    </Field.Field>
+                    <Field.Field>
+                        <Input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                        />
+                        {#if errors.password}
+                            <Field.Error>
+                                {errors.password}
+                            </Field.Error>
+                        {/if}
+                    </Field.Field>
+                </Field.Set>
+                <Button type="submit" disabled={processing}>Log In</Button>
+            </Field.Group>
         {/snippet}
     </Form>
 </App>

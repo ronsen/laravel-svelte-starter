@@ -22,7 +22,9 @@ export default defineConfig({
                 }),
             ],
         }),
-        inertia(),
+        inertia({
+            ssr: false,
+        }),
         tailwindcss(),
         svelte()
     ],
